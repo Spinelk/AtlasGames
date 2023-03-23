@@ -7,9 +7,8 @@
     <link rel="icon" type="image/x-icon" href="/src/Logo 220x108.png" />
 
     <!-- CCS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <style>
-
       body {
         background-color: #2a1f49;
       }
@@ -24,7 +23,7 @@
       }
 
       .carta-juego-md {
-        width: 33rem;
+        width: 35rem;
         background-color: #201930;
         border-radius: 0%;
         font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
@@ -83,13 +82,14 @@
       .contenedor-cartas {
         /* background-color: aqua; */
         /* width: 80%; */
-        margin-left: auto;
+        margin: auto;
         padding-top: 10px;
         padding-bottom: 20px;
       }
 
       .barnav {
         background-color: #201930;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
       }
 
       .barnav-opciones {
@@ -131,12 +131,35 @@
         background-color: #bfff00;
         outline: none;
       }
+
+      .main {
+        padding-top: 40px;
+      }
+
+      .menu-lateral {
+        background-color: aqua;
+        width: 20%;
+      }
+
+      .menu-lateral-logo {
+        padding-top: 30px;
+        background-color: red;
+      }
+
+      .menu-lateral-opciones {
+        background-color: #bfff00;
+        height: 5%;
+        width: 100%;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        color: white;
+        display: flex;
+        align-items: center;
+      }
     </style>
   </head>
 
   <body>
-    <!-- Barra De Navegación -->
-    <nav class="navbar navbar-expand-lg barnav">
+    <nav class="navbar fixed-top navbar-expand-lg barnav">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img
@@ -185,110 +208,245 @@
       </div>
     </nav>
 
-    <div class="contenedor-cartas">
-      <div class="contenedor-cartas-pq">
-        <div class="card carta-juego-pq">
-          <img
-            src="/src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-            class="card-img-top portada-carta-juego-pq"
-            alt="Cyberpunk 2077"
-          />
-          <div class="card-body">
-            <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-            <p class="card-text precio-carta-juego">$39.990</p>
-          </div>
-        </div>
-
-        <div class="card carta-juego-pq">
-          <img
-            src="/src/portadas/pq/ItTakesTwo_portada-pq.webp"
-            class="card-img-top portada-carta-juego-pq"
-            alt="It Takes Two"
-          />
-          <div class="card-body">
-            <h5 class="card-title titulo-carta-juego">It Takes Two</h5>
-            <p class="card-text precio-carta-juego">$31.900</p>
-          </div>
-        </div>
-
-        <div class="card carta-juego-pq">
-          <img
-            src="/src/portadas/pq/Stray_portada-pq.webp"
-            class="card-img-top portada-carta-juego-pq"
-            alt="Stray"
-          />
-          <div class="card-body">
-            <h5 class="card-title titulo-carta-juego">Stray</h5>
-            <p class="card-text precio-carta-juego">$12.500</p>
-          </div>
-        </div>
-
-        <div class="card carta-juego-pq">
-          <img
-            src="/src/portadas/pq/EldenRing_portada-pq.jpg"
-            class="card-img-top portada-carta-juego-pq"
-            alt="Elden Ring"
-          />
-          <div class="card-body">
-            <h5 class="card-title titulo-carta-juego">Elden Ring</h5>
-            <p class="card-text precio-carta-juego">$43.000</p>
-          </div>
-        </div>
-
-        <div class="card carta-juego-pq">
-          <img
-            src="/src/portadas/pq/GothamKnights_portada-pq.jpeg"
-            class="card-img-top portada-carta-juego-pq"
-            alt="Gotham Knights"
-          />
-          <div class="card-body">
-            <h5 class="card-title titulo-carta-juego">Gotham Knights</h5>
-            <p class="card-text precio-carta-juego">$37.000</p>
-          </div>
-        </div>
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
       </div>
-
-      <br />
-
-      <div class="contenedor-cartas-md">
-        <div class="card carta-juego-md">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
           <img
-            src="/src/portadas/md/TheForest_portada-md.jpg"
-            class="card-img-top portada-carta-juego-md"
-            alt="The Forest"
-          />
-          <div class="card-body">
-            <h5 class="card-title titulo-carta-juego">The Forest</h5>
-            <p class="card-text precio-carta-juego">$7.700</p>
-          </div>
-        </div>
-
-        <div class="card carta-juego-md">
-          <img
-            src="/src/portadas/md/RainbowSixSiege_portada-md.jpeg"
-            class="card-img-top portada-carta-juego-md"
-            alt="Rainbow Six: Siege"
-          />
-          <div class="card-body">
-            <h5 class="card-title titulo-carta-juego">Rainbow Six: Siege</h5>
-            <p class="card-text precio-carta-juego">$17.700</p>
-          </div>
-        </div>
-
-        <div class="card carta-juego-md">
-          <img
-            src="/src/portadas/md/ResidentEvil4_portada-md.jpg"
-            class="card-img-top portada-carta-juego-md"
+            src="src/portadas/md/ResidentEvil4_portada-md.jpg"
+            class="d-block w-100"
             alt="Resident Evil 4"
           />
-          <div class="card-body">
-            <h5 class="card-title titulo-carta-juego">Resident Evil 4</h5>
-            <p class="card-text precio-carta-juego">$69.990</p>
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Resident Evil 4</h5>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
+              magni facere maiores natus error ratione dolore, ipsam, debitis
+              ipsum nulla vitae dolor, veritatis est impedit. Velit nisi aliquam
+              corrupti deserunt?
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="src/portadas/md/RainbowSixSiege_portada-md.jpeg"
+            class="d-block w-100"
+            alt="Raibow Six: Siege"
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Rainbow Six: Siege</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
+              minus cupiditate minima asperiores assumenda dolorum earum
+              accusantium, nesciunt, cum quibusdam, dicta similique quis in
+              reprehenderit! Recusandae nisi debitis deserunt consequuntur?
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="src/portadas/md/TheForest_portada-md.jpg"
+            class="d-block w-100"
+            alt="The Forest"
+          />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>The Forest</h5>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
+              cum nostrum neque numquam nesciunt voluptates ut, vero, aperiam,
+              modi quia fugit? Laboriosam, tempore? Dicta id quod omnis quisquam
+              pariatur! Inventore.
+            </p>
           </div>
         </div>
       </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
 
-      <br />
+    <div class="main">
+      <div class="contenedor-cartas">
+        <div class="contenedor-cartas-pq">
+          <div class="card carta-juego-pq">
+            <img
+              src="/src/portadas/pq/Cyberpunk2077_portada-pq.webp"
+              class="card-img-top portada-carta-juego-pq"
+              alt="Cyberpunk 2077"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
+              <p class="card-text precio-carta-juego">$39.990</p>
+            </div>
+          </div>
+
+          <div class="card carta-juego-pq">
+            <img
+              src="/src/portadas/pq/ItTakesTwo_portada-pq.webp"
+              class="card-img-top portada-carta-juego-pq"
+              alt="It Takes Two"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">It Takes Two</h5>
+              <p class="card-text precio-carta-juego">$31.900</p>
+            </div>
+          </div>
+
+          <div class="card carta-juego-pq">
+            <img
+              src="/src/portadas/pq/Stray_portada-pq.webp"
+              class="card-img-top portada-carta-juego-pq"
+              alt="Stray"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">Stray</h5>
+              <p class="card-text precio-carta-juego">$12.500</p>
+            </div>
+          </div>
+
+          <div class="card carta-juego-pq">
+            <img
+              src="/src/portadas/pq/EldenRing_portada-pq.jpg"
+              class="card-img-top portada-carta-juego-pq"
+              alt="Elden Ring"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">Elden Ring</h5>
+              <p class="card-text precio-carta-juego">$43.000</p>
+            </div>
+          </div>
+
+          <div class="card carta-juego-pq">
+            <img
+              src="/src/portadas/pq/GothamKnights_portada-pq.jpeg"
+              class="card-img-top portada-carta-juego-pq"
+              alt="Gotham Knights"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">Gotham Knights</h5>
+              <p class="card-text precio-carta-juego">$37.000</p>
+            </div>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="contenedor-cartas-md">
+          <div class="card carta-juego-md">
+            <img
+              src="/src/portadas/md/TheForest_portada-md.jpg"
+              class="card-img-top portada-carta-juego-md"
+              alt="The Forest"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">The Forest</h5>
+              <p class="card-text precio-carta-juego">$7.700</p>
+            </div>
+          </div>
+
+          <div class="card carta-juego-md">
+            <img
+              src="/src/portadas/md/RainbowSixSiege_portada-md.jpeg"
+              class="card-img-top portada-carta-juego-md"
+              alt="Rainbow Six: Siege"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">Rainbow Six: Siege</h5>
+              <p class="card-text precio-carta-juego">$17.700</p>
+            </div>
+          </div>
+
+          <div class="card carta-juego-md">
+            <img
+              src="/src/portadas/md/ResidentEvil4_portada-md.jpg"
+              class="card-img-top portada-carta-juego-md"
+              alt="Resident Evil 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">Resident Evil 4</h5>
+              <p class="card-text precio-carta-juego">$69.990</p>
+            </div>
+          </div>
+
+          <div class="card carta-juego-md">
+            <img
+              src="/src/portadas/md/TheForest_portada-md.jpg"
+              class="card-img-top portada-carta-juego-md"
+              alt="The Forest"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">The Forest</h5>
+              <p class="card-text precio-carta-juego">$7.700</p>
+            </div>
+          </div>
+
+          <div class="card carta-juego-md">
+            <img
+              src="/src/portadas/md/RainbowSixSiege_portada-md.jpeg"
+              class="card-img-top portada-carta-juego-md"
+              alt="Rainbow Six: Siege"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">Rainbow Six: Siege</h5>
+              <p class="card-text precio-carta-juego">$17.700</p>
+            </div>
+          </div>
+
+          <div class="card carta-juego-md">
+            <img
+              src="/src/portadas/md/ResidentEvil4_portada-md.jpg"
+              class="card-img-top portada-carta-juego-md"
+              alt="Resident Evil 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title titulo-carta-juego">Resident Evil 4</h5>
+              <p class="card-text precio-carta-juego">$69.990</p>
+            </div>
+          </div>
+        </div>
+
+        <br />
+      </div>
     </div>
 
     <!-- Javascript -->

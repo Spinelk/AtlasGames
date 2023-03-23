@@ -1,0 +1,38 @@
+
+
+
+          <div class="menu-lateral">
+        <div class="menu-lateral-logo">
+          <img
+            src="src/Logo 220x108.png"
+            alt="Atlas Games"
+            style="width: 100%"
+          />
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <div class="menu-lateral-opciones">
+          <div style="background-color: #2a1f49; width: 80%; margin: auto">
+            <h1>Tienda</h1>
+          </div>
+        </div>
+
+        <br />
+
+        <div class="menu-lateral-opciones">
+          <div
+            style="
+              background-color: #2a1f49;
+              width: 80%;
+              margin: auto;
+              display: flex;
+              align-items: center;
+            "
+          >
+            <h1>Biblioteca</h1>
+          </div>
+        </div>
+      </div>
