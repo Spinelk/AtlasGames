@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Atlas Games</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #2a1f49;
+      }
+
+      .carta-juego-pq {
+        width: 18rem;
+        background-color: #201930;
+        border-radius: 0%;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        border: 0px;
+        margin: 0%;
+      }
+
+      .carta-juego-md {
+        width: 32rem;
+        background-color: #201930;
+        border-radius: 0%;
+        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        border: 0px;
+        margin: 0%;
+      }
+
+      .portada-carta-juego-pq {
+        width: 90%;
+        height: auto;
+        border-radius: 0%;
+        padding-top: 15px;
+        margin: auto;
+      }
+
+      .portada-carta-juego-md {
+        width: 100%;
+        height: 20rem;
+        border-radius: 0%;
+        padding-top: 15px;
+        margin: auto;
+      }
+
+      .titulo-carta-juego {
+        color: white;
+        font-size: xx-large;
+      }
+
+      .precio-carta-juego {
+        color: #bfff00;
+        font-size: x-large;
+      }
+
+      .contenedor-cartas-pq {
+        /* background-color: white; */
+        margin: auto;
+        width: 90%;
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .contenedor-cartas-md {
+        background-color: white;
+        margin: auto;
+        width: 90%;
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .contenedor-cartas {
+        /* background-color: aqua; */
+        /* width: 80%; */
+        margin-left: auto;
+        padding-top: 10px;
+        padding-bottom: 20px;
+      }
+
+      .barnav {
+        background-color: #201930;
+      }
+
+      .barnav-opciones {
+        color: white;
+      }
+
+      .barnav-opciones:hover {
+        color: #bfff00;
+      }
+
+      .barnav-opciones-activa {
+        color: #bfff00;
+      }
+
+      .barnav-opciones-focus {
+        color: #bfff00;
+      }
+
+      .barnav-barbusqueda {
+        background-color: #2a1f49;
+        border-radius: 0%;
+        border: 0px;
+      }
+
+      .barnav-barbusqueda:focus {
+        background-color: #2a1f49;
+        color: #bfff00;
+      }
+
+      .barnav-btn-opciones {
+        background-color: #2a1f49;
+      }
+
+      .barnav-btn-opciones:hover {
+        background-color: #bfff00;
+      }
+
+      .barnav-btn-opciones:active {
+        background-color: #bfff00;
+        outline: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Barra De Navegación -->
+    <nav class="navbar navbar-expand-lg barnav">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="src/Logo 220x108.png"
+            alt="Bootstrap"
+            width="73.3"
+            height="36"
+        /></a>
+        <button
+          class="navbar-toggler barnav-btn-opciones"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link barnav-opciones"
+                aria-current="page"
+                href="index.html"
+                >Tienda</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link barnav-opciones" href="#">Biblioteca</a>
+            </li>
+          </ul>
+
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2 barnav-barbusqueda"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">🔎</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="contenedor-cartas">
+      <div class="contenedor-cartas-pq">
+        <div class="card carta-juego-pq">
+          <img
+            src="/src/portadas/pq/Cyberpunk2077_portada-pq.webp"
+            class="card-img-top portada-carta-juego-pq"
+            alt="Cyberpunk 2077"
+          />
+          <div class="card-body">
+            <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
+            <p class="card-text precio-carta-juego">$39.990</p>
+          </div>
+        </div>
+
+        <div class="card carta-juego-pq">
+          <img
+            src="/src/portadas/pq/ItTakesTwo_portada-pq.webp"
+            class="card-img-top portada-carta-juego-pq"
+            alt="It Takes Two"
+          />
+          <div class="card-body">
+            <h5 class="card-title titulo-carta-juego">It Takes Two</h5>
+            <p class="card-text precio-carta-juego">$31.900</p>
+          </div>
+        </div>
+
+        <div class="card carta-juego-pq">
+          <img
+            src="/src/portadas/pq/Stray_portada-pq.webp"
+            class="card-img-top portada-carta-juego-pq"
+            alt="Stray"
+          />
+          <div class="card-body">
+            <h5 class="card-title titulo-carta-juego">Stray</h5>
+            <p class="card-text precio-carta-juego">$12.500</p>
+          </div>
+        </div>
+
+        <div class="card carta-juego-pq">
+          <img
+            src="/src/portadas/pq/EldenRing_portada-pq.jpg"
+            class="card-img-top portada-carta-juego-pq"
+            alt="Elden Ring"
+          />
+          <div class="card-body">
+            <h5 class="card-title titulo-carta-juego">Elden Ring</h5>
+            <p class="card-text precio-carta-juego">$43.000</p>
+          </div>
+        </div>
+
+        <div class="card carta-juego-pq">
+          <img
+            src="/src/portadas/pq/GothamKnights_portada-pq.jpeg"
+            class="card-img-top portada-carta-juego-pq"
+            alt="Gotham Knights"
+          />
+          <div class="card-body">
+            <h5 class="card-title titulo-carta-juego">Gotham Knights</h5>
+            <p class="card-text precio-carta-juego">$37.000</p>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <div class="contenedor-cartas-md">
+        <div class="card carta-juego-md">
+          <img
+            src="/src/portadas/md/TheForest_portada-md.jpg"
+            class="card-img-top portada-carta-juego-md"
+            alt="The Forest"
+          />
+          <div class="card-body">
+            <h5 class="card-title titulo-carta-juego">The Forest</h5>
+            <p class="card-text precio-carta-juego">$7.700</p>
+          </div>
+        </div>
+
+        <div class="card carta-juego-md">
+          <img
+            src="/src/portadas/md/RainbowSixSiege_portada-md.jpeg"
+            class="card-img-top portada-carta-juego-md"
+            alt="Rainbow Six: Siege"
+          />
+          <div class="card-body">
+            <h5 class="card-title titulo-carta-juego">Rainbow Six: Siege</h5>
+            <p class="card-text precio-carta-juego">$17.700</p>
+          </div>
+        </div>
+
+        <div class="card carta-juego-md">
+          <img
+            src="/src/portadas/md/ResidentEvil4_portada-md.jpg"
+            class="card-img-top portada-carta-juego-md"
+            alt="Resident Evil 4"
+          />
+          <div class="card-body">
+            <h5 class="card-title titulo-carta-juego">Resident Evil 4</h5>
+            <p class="card-text precio-carta-juego">$69.990</p>
+          </div>
+        </div>
+      </div>
+
+      <br />
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
