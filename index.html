@@ -1,672 +1,450 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Atlas Games</title>
-    <link rel="icon" type="image/x-icon" href="src/Logo 220x108.png" />
+<!doctype html>
+<html lang="en">
 
-    <!-- CCS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <style>
-      body {
-        background-color: #2a1f49;
-      }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="estilo.css">
+</head>
 
-      .carta-juego-pq {
-        width: 18rem;
-        background-color: #201930;
-        border-radius: 0%;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        border: 0px;
-        margin: 0%;
-      }
+<body>
 
-      .carta-juego-md {
-        width: 34rem;
-        background-color: #201930;
-        border-radius: 0%;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        border: 0px;
-        margin: 0%;
-      }
 
-      .portada-carta-juego-pq {
-        width: 90%;
-        height: auto;
-        border-radius: 0%;
-        padding-top: 15px;
-        margin: auto;
-        color: white;
-      }
+  <div class="carrusel">
 
-      .portada-carta-juego-md {
-        width: 95%;
-        height: 19rem;
-        border-radius: 0%;
-        padding-top: 15px;
-        margin: auto;
-        color: white;
-      }
+    <div class="cabezera-carrusel shadow">
 
-      .titulo-carta-juego {
-        color: white;
-        font-size: xx-large;
-      }
+      <div class="titulo-carrusel"> Lorem Ipsum </div>
 
-      .precio-carta-juego {
-        color: #bfff00;
-        font-size: x-large;
-      }
-
-      .contenedor-cartas-pq {
-        /* background-color: white; */
-        margin: auto;
-        width: 90%;
-        justify-content: space-between;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-      }
-
-      .contenedor-cartas-md {
-        /* background-color: white; */
-        margin: auto;
-        width: 90%;
-        justify-content: space-between;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-      }
-
-      .contenedor-cartas {
-        /* background-color: aqua; */
-        /* width: 80%; */
-        margin: auto;
-        padding-top: 10px;
-        padding-bottom: 20px;
-      }
-
-      .barnav {
-        background-color: #201930;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-      }
-
-      .barnav-opciones {
-        color: white;
-      }
-
-      .barnav-opciones:hover {
-        color: #bfff00;
-      }
-
-      .barnav-opciones-activa {
-        color: #bfff00;
-      }
-
-      .barnav-opciones-focus {
-        color: #bfff00;
-      }
-
-      .barnav-barbusqueda {
-        background-color: #2a1f49;
-        border-radius: 0%;
-        border: 0px;
-      }
-
-      .barnav-barbusqueda:focus {
-        background-color: #2a1f49;
-        color: #bfff00;
-      }
-
-      .barnav-btn-opciones {
-        background-color: #2a1f49;
-      }
-
-      .barnav-btn-opciones:hover {
-        background-color: #bfff00;
-      }
-
-      .barnav-btn-opciones:active {
-        background-color: #bfff00;
-        outline: none;
-      }
-
-      .main {
-        padding-top: 40px;
-      }
-
-      .menu-lateral {
-        background-color: aqua;
-        width: 20%;
-      }
-
-      .menu-lateral-logo {
-        padding-top: 30px;
-        background-color: red;
-      }
-
-      .menu-lateral-opciones {
-        background-color: #bfff00;
-        height: 5%;
-        width: 100%;
-        font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-        color: white;
-        display: flex;
-        align-items: center;
-      }
-    </style>
-  </head>
-
-  <body>
-    <nav class="navbar fixed-top navbar-expand-lg barnav">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img
-            src="src/Logo 220x108.png"
-            alt="Bootstrap"
-            width="73.3"
-            height="36"
-        /></a>
-        <button
-          class="navbar-toggler barnav-btn-opciones"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a
-                class="nav-link barnav-opciones"
-                aria-current="page"
-                href="index.html"
-                >Tienda</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link barnav-opciones" href="#">Biblioteca</a>
-            </li>
-          </ul>
-
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2 barnav-barbusqueda"
-              type="search"
-              placeholder="Buscar"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">🔎</button>
-          </form>
-        </div>
+      <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-carrusel" data-bs-target="#carouselExample" data-bs-slide="prev">Left</button>
+        <button type="button" class="btn btn-carrusel"  data-bs-target="#carouselExample" data-bs-slide="next">Right</button>
       </div>
-    </nav>
 
-    <div
-      id="carouselExampleCaptions"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-      </div>
+    </div>
+
+    <div id="carouselExample" class="carousel slide cuerpo-carrusel">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img
-            src="src/portadas/md/ResidentEvil4_portada-md.jpg"
-            class="d-block w-100"
-            alt="Resident Evil 4"
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Resident Evil 4</h5>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque
-              magni facere maiores natus error ratione dolore, ipsam, debitis
-              ipsum nulla vitae dolor, veritatis est impedit. Velit nisi aliquam
-              corrupti deserunt?
-            </p>
-          </div>
+          <div class="grupo-cartas-pq"> <!--  Card-group  -->
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+          </div> <!-- Fin card-group  -->
         </div>
         <div class="carousel-item">
-          <img
-            src="src/portadas/md/RainbowSixSiege_portada-md.jpeg"
-            class="d-block w-100"
-            alt="Raibow Six: Siege"
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Rainbow Six: Siege</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
-              minus cupiditate minima asperiores assumenda dolorum earum
-              accusantium, nesciunt, cum quibusdam, dicta similique quis in
-              reprehenderit! Recusandae nisi debitis deserunt consequuntur?
-            </p>
-          </div>
+          <div class="grupo-cartas-pq"> <!--  Card-group  -->
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+          </div> <!-- Fin card-group  -->
         </div>
         <div class="carousel-item">
-          <img
-            src="src/portadas/md/TheForest_portada-md.jpg"
-            class="d-block w-100"
-            alt="The Forest"
-          />
-          <div class="carousel-caption d-none d-md-block">
-            <h5>The Forest</h5>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-              cum nostrum neque numquam nesciunt voluptates ut, vero, aperiam,
-              modi quia fugit? Laboriosam, tempore? Dicta id quod omnis quisquam
-              pariatur! Inventore.
-            </p>
-          </div>
+          <div class="grupo-cartas-pq"> <!--  Card-group  -->
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="card text-white carta-pq shadow">
+              <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Cyberpunk 2077</h5>
+
+                <div class="d-grid gap-2">
+                  <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+                </div>
+              </div>
+            </div>
+          </div> <!-- Fin card-group  -->
         </div>
       </div>
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-
-    <div class="main">
-      <div class="contenedor-cartas">
-        <div class="contenedor-cartas-pq">
-          <div class="card carta-juego-pq">
-            <img
-              src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-              class="card-img-top portada-carta-juego-pq"
-              alt="Cyberpunk 2077"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-              <p class="card-text precio-carta-juego">$39.990</p>
-            </div>
-          </div>
-
-          <div class="card carta-juego-pq">
-            <img
-              src="src/portadas/pq/ItTakesTwo_portada-pq.webp"
-              class="card-img-top portada-carta-juego-pq"
-              alt="It Takes Two"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">It Takes Two</h5>
-              <p class="card-text precio-carta-juego">$31.900</p>
-            </div>
-          </div>
-
-          <div class="card carta-juego-pq">
-            <img
-              src="src/portadas/pq/Stray_portada-pq.webp"
-              class="card-img-top portada-carta-juego-pq"
-              alt="Stray"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">Stray</h5>
-              <p class="card-text precio-carta-juego">$12.500</p>
-            </div>
-          </div>
-
-          <div class="card carta-juego-pq">
-            <img
-              src="src/portadas/pq/EldenRing_portada-pq.jpg"
-              class="card-img-top portada-carta-juego-pq"
-              alt="Elden Ring"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">Elden Ring</h5>
-              <p class="card-text precio-carta-juego">$43.000</p>
-            </div>
-          </div>
-
-          <div class="card carta-juego-pq">
-            <img
-              src="src/portadas/pq/GothamKnights_portada-pq.jpeg"
-              class="card-img-top portada-carta-juego-pq"
-              alt="Gotham Knights"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">Gotham Knights</h5>
-              <p class="card-text precio-carta-juego">$37.000</p>
-            </div>
-          </div>
-        </div>
-
-        <br />
-
-        <div class="contenedor-cartas-md">
-          <div class="card carta-juego-md">
-            <img
-              src="src/portadas/md/TheForest_portada-md.jpg"
-              class="card-img-top portada-carta-juego-md"
-              alt="The Forest"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">The Forest</h5>
-              <p class="card-text precio-carta-juego">$7.700</p>
-            </div>
-          </div>
-
-          <div class="card carta-juego-md">
-            <img
-              src="src/portadas/md/RainbowSixSiege_portada-md.jpeg"
-              class="card-img-top portada-carta-juego-md"
-              alt="Rainbow Six: Siege"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">Rainbow Six: Siege</h5>
-              <p class="card-text precio-carta-juego">$17.700</p>
-            </div>
-          </div>
-
-          <div class="card carta-juego-md">
-            <img
-              src="src/portadas/md/ResidentEvil4_portada-md.jpg"
-              class="card-img-top portada-carta-juego-md"
-              alt="Resident Evil 4"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">Resident Evil 4</h5>
-              <p class="card-text precio-carta-juego">$69.990</p>
-            </div>
-          </div>
-
-          <div class="card carta-juego-md">
-            <img
-              src="src/portadas/md/TheForest_portada-md.jpg"
-              class="card-img-top portada-carta-juego-md"
-              alt="The Forest"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">The Forest</h5>
-              <p class="card-text precio-carta-juego">$7.700</p>
-            </div>
-          </div>
-
-          <div class="card carta-juego-md">
-            <img
-              src="src/portadas/md/RainbowSixSiege_portada-md.jpeg"
-              class="card-img-top portada-carta-juego-md"
-              alt="Rainbow Six: Siege"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">Rainbow Six: Siege</h5>
-              <p class="card-text precio-carta-juego">$17.700</p>
-            </div>
-          </div>
-
-          <div class="card carta-juego-md">
-            <img
-              src="src/portadas/md/ResidentEvil4_portada-md.jpg"
-              class="card-img-top portada-carta-juego-md"
-              alt="Resident Evil 4"
-            />
-            <div class="card-body">
-              <h5 class="card-title titulo-carta-juego">Resident Evil 4</h5>
-              <p class="card-text precio-carta-juego">$69.990</p>
-            </div>
-          </div>
-        </div>
-
-        <br />
-      </div>
-
-      <div class="container-fluid" style="width: 94%">
-        <div class="row">
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card carta-juego-pq" style="margin: auto">
-              <img
-                src="src/portadas/pq/Cyberpunk2077_portada-pq.webp"
-                class="card-img-top portada-carta-juego-pq"
-                alt="Cyberpunk 2077"
-              />
-              <div class="card-body">
-                <h5 class="card-title titulo-carta-juego">Cyberpunk 2077</h5>
-                <p class="card-text precio-carta-juego">$39.990</p>
-              </div>
-            </div>
-          </div>
-          
+  </div>
 
 
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <div class="grupo-cartas-pq"> <!--  Card-group  -->
+
+    <div class="card text-white carta-pq shadow">
+      <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cyberpunk 2077</h5>
+
+        <div class="d-grid gap-2">
+          <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
         </div>
       </div>
     </div>
 
-    <!-- Javascript -->
-    <script src="js/bootstrap.bundle.min.js"></script>
-  </body>
+
+    <div class="card text-white carta-pq shadow">
+      <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cyberpunk 2077</h5>
+
+        <div class="d-grid gap-2">
+          <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card text-white carta-pq shadow">
+      <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cyberpunk 2077</h5>
+
+        <div class="d-grid gap-2">
+          <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card text-white carta-pq shadow">
+      <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cyberpunk 2077</h5>
+
+        <div class="d-grid gap-2">
+          <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card text-white carta-pq shadow">
+      <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cyberpunk 2077</h5>
+
+        <div class="d-grid gap-2">
+          <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card text-white carta-pq shadow">
+      <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Cyberpunk 2077</h5>
+
+        <div class="d-grid gap-2">
+          <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Fin card-group  -->
+
+
+
+  <div class="grupo-cartas-md"> <!--  Card-group  -->
+    <div class="card text-white carta-md shadow">
+      <img src="src/portadas/md/ResidentEvil4_portada-md.jpg" class="card-img-top img-carta-md shadow" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Resident Evil 4</h5>
+
+        <div class="d-grid gap-2">
+          <button href="#" class="btn btn-carta-md shadow" type="button">$47.500</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card text-white carta-md shadow">
+      <img src="src/portadas/md/ResidentEvil4_portada-md.jpg" class="card-img-top img-carta-md shadow" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Resident Evil 4</h5>
+
+        <div class="d-grid gap-2">
+          <button href="#" class="btn btn-carta-md shadow" type="button">$47.500</button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="card text-white carta-md shadow">
+      <img src="src/portadas/md/ResidentEvil4_portada-md.jpg" class="card-img-top img-carta-md shadow" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Resident Evil 4</h5>
+
+        <div class="d-grid gap-2">
+          <button href="#" class="btn btn-carta-md shadow" type="button">$47.500</button>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Fin card-group  -->
+
+
+  <br>
+  <br>
+  <br>
+
+
+  <div class="card text-white carta-pq shadow">
+    <img src="src/portadas/pq/Cyberpunk2077_portada-pq.webp" class="card-img-top img-carta-pq shadow" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Cyberpunk 2077</h5>
+
+      <div class="d-grid gap-2">
+        <button href="#" class="btn btn-carta-pq shadow" type="button">$35.500</button>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="card text-white carta-md shadow">
+    <img src="src/portadas/md/ResidentEvil4_portada-md.jpg" class="card-img-top img-carta-md shadow" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Resident Evil 4</h5>
+
+      <div class="d-grid gap-2">
+        <button href="#" class="btn btn-carta-md shadow" type="button">$47.500</button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

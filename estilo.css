@@ -1,0 +1,153 @@
+:root {
+    --moradoOscuro: #201930;
+    --moradoClaro: #2a1f49;
+    --verdeBrillante: #bfff00;
+    --gris: #a6a6a6;
+
+    --ancho-maximo: 75%;
+  }
+
+body {
+  background-color: var(--moradoClaro);
+
+}
+
+
+/* carta pequeña */
+.carta-pq {
+  max-width: 12rem;
+  background-color: var(--moradoOscuro);
+  border: 0px;
+
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.img-carta-pq{
+  border-radius: 5px;
+  aspect-ratio: 1/1.37;
+}
+
+.btn-carta-pq {
+  background-color: var(--verdeBrillante);
+  color: var(--moradoOscuro);
+  border: 0px;
+
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: large;
+
+  border-radius: 5px;
+}
+
+.btn-carta-pq:hover {
+  background-color: var(--moradoClaro);
+}
+/* carta pequeña */
+
+
+
+/* carta mediana */
+.carta-md {
+  max-width: 29rem;
+  background-color: var(--moradoOscuro);
+  border: 0px;
+
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: xx-large;
+
+  border-radius: 5px;
+
+}
+
+.img-carta-md{
+  border-radius: 5px;
+  aspect-ratio: 2/1.1;
+}
+
+.btn-carta-md {
+  background-color: var(--verdeBrillante);
+  color: var(--moradoOscuro);
+  border: 0px;
+
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.btn-carta-md:hover {
+  background-color: var(--moradoClaro);
+}
+/* carta mediana */
+
+
+/* grupo cartas pequeñas */
+.grupo-cartas-pq {
+  justify-content: space-between;
+  /* background-color: aqua; */
+  display: flex;
+  width: var(--ancho-maximo);
+  margin: auto;
+}
+/* grupo cartas pequeñas */
+
+/* grupo cartas medianas */
+.grupo-cartas-md {
+  justify-content: space-between;
+  background-color: aqua;
+  display: flex;
+  width: var(--ancho-maximo);
+  margin: auto;
+}
+/* grupo cartas medianas */
+
+
+/* carrusel */
+
+.carrusel{
+  /* background-color: dodgerblue; */
+  padding: 50px;
+}
+
+
+.cabezera-carrusel{
+  background-color: var(--moradoOscuro);
+  border-radius: 5px;
+  width: var(--ancho-maximo);
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.titulo-carrusel{
+
+  color: white;
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: larger;
+  
+
+}
+
+.btn-carrusel{
+  background-color: var(--verdeBrillante);
+  color: var(--moradoOscuro);
+  border: 0px;
+
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: large;
+}
+
+.btn-carrusel:hover{
+  color: white;
+}
+
+/* carrusel */
