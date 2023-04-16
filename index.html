@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bootstrap demo</title>
+  <title>Atlas Games</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="estilo.css">
@@ -42,9 +42,59 @@
 
 
   <br>
+  <br>
 
 
-  <div class="container carrusel">
+  <div class="container componente">
+    <div id="carouselExampleCaptions" class="carousel slide cuerpo-carrusel" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="src/portadas/gd/LeagueOfLegends_portada-gd.jpeg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="src/portadas/gd/RocketLeague_portada-gd.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="src/portadas/gd/Fortnite_portada-gd.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <br>
+
+
+  <div class="container componente">
 
     <div class="cabezera-carrusel shadow">
 
@@ -361,7 +411,7 @@
 
   <br>
 
-  <div class="a" style="width: 71%; margin: auto;">
+  <div class="container componente" style="margin: auto;">
 
     <div class="grupo-cartas-md"> <!--  Card-group  -->
       <div class="card text-white carta-md shadow">
@@ -414,44 +464,112 @@
   </div>
 
   <br>
-  <br>
-  <br>
 
-  <div class="b" style="width: 71%; margin: auto; background-color: #2a1f49; border-radius: 5px; padding: 50px;">
+  <div class="container componente">
 
-    <div class="grupo-cartas-md"> <!--  Card-group  -->
-      <div class="card text-white carta-md-oscura shadow">
-        <img src="src/portadas/md/ResidentEvil4_portada-md.jpg" class="card-img-top img-carta-md shadow" alt="...">
-        <div class="card-body">
-          <div class="carta-md-titulo">
-            <h5 class="card-title">Resident Evil 4</h5>
+    <div class="cabezera-carrusel shadow">
+
+      <div class="titulo-carrusel"> Juega Gratis </div>
+      <div class="btn-group shadow" role="group" aria-label="Basic mixed styles example">
+        <button type="button" class="btn btn-carrusel" data-bs-target="#carouselGratis" data-bs-slide="prev">
+          <img src="src/iconos/icono-next.png" alt="" style="aspect-ratio: 1/1; width: 2rem; transform: scaleX(-1);">
+        </button>
+        <button type="button" class="btn btn-carrusel" data-bs-target="#carouselGratis" data-bs-slide="next">
+          <img src="src/iconos/icono-next.png" alt="" style="aspect-ratio: 1/1; width: 2rem;">
+        </button>
+      </div>
+
+    </div>
+
+    <div id="carouselGratis" class="carousel slide cuerpo-carrusel" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="src/portadas/gd/LeagueOfLegends_portada-gd.jpeg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>First slide label</h5>
+            <p>Some representative placeholder content for the first slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="src/portadas/gd/RocketLeague_portada-gd.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Some representative placeholder content for the second slide.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="src/portadas/gd/Fortnite_portada-gd.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
           </div>
 
-          <div class="d-grid gap-2 carta-md.precio">
-            <div class="btn-carta-md shadow">
-              $47.500
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container componente">
+    <div class="b" style="width: 75%; margin: auto; background-color: #2a1f49; border-radius: 5px; padding: 50px;">
+
+      <div class="grupo-cartas-hz"> <!--  Card-group  -->
+        <div class="card text-white carta-hz-oscura shadow">
+          <div class="row g-0">
+            <div class="col-md-4" style="padding: 0px;">
+              <div>
+                <img src="src/portadas/pq/StardewValley_portada-pq.jpg" class="card-img-top img-carta-hz shadow"
+                  alt="..." style="align-items: start;">
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body" style="height: 100%;">
+                <div class="carta-hz-titulo">
+                  <h3 class="card-title">Stardew Valley</h3>
+
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                </div>
+                <div class="d-grid gap-2 carta-hz-precio">
+                  <div class="btn-carta-hz shadow">
+                    $35.500
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card text-white carta-hz-oscura shadow">
+          <div class="row g-0">
+            <div class="col-md-4" style="padding: 0px;">
+              <div>
+                <img src="src/portadas/pq/AShortHike_portada-pq.jpg" class="card-img-top img-carta-hz shadow" alt="..."
+                  style="align-items: start;">
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body" style="height: 100%;">
+                <div class="carta-hz-titulo">
+                  <h3 class="card-title">A Short Hike</h3>
+
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's
+                    content.</p>
+                </div>
+                <div class="d-grid gap-2 carta-hz-precio">
+                  <div class="btn-carta-hz shadow">
+                    $35.500
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="card text-white carta-md-oscura shadow">
-        <img src="src/portadas/md/RainbowSixSiege_portada-md.jpg" class="card-img-top img-carta-md shadow" alt="...">
-        <div class="card-body">
-          <div class="carta-md-titulo">
-            <h5 class="card-title">Rainbow Six: Siege</h5>
-          </div>
-
-          <div class="d-grid gap-2 carta-md.precio">
-            <div class="btn-carta-md shadow">
-              $47.500
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div> <!-- Fin card-group  -->
-
+    </div>
   </div>
 
 
@@ -474,6 +592,8 @@
   <br>
   <br>
 
+
+  
   <div style="background-color: white;">COMPONENTES</div>
 
   <br>
@@ -525,7 +645,7 @@
       </div>
     </div>
 
-    <div class="card text-white carta-pq-oscura shadow">
+    <div class="card text-white carta-pq shadow">
       <img src="src/portadas/pq/Cyberpunk2077_portada-pq.jpg" class="card-img-top img-carta-pq shadow" alt="...">
       <div class="card-body">
         <div class="carta-pq-titulo">
@@ -540,7 +660,7 @@
       </div>
     </div>
 
-    <div class="card text-white carta-pq-oscura shadow">
+    <div class="card text-white carta-pq shadow">
       <img src="src/portadas/pq/Cyberpunk2077_portada-pq.jpg" class="card-img-top img-carta-pq shadow" alt="...">
       <div class="card-body">
         <div class="carta-pq-titulo">
@@ -555,7 +675,7 @@
       </div>
     </div>
 
-    <div class="card text-white carta-pq-oscura shadow">
+    <div class="card text-white carta-pq shadow">
       <img src="src/portadas/pq/Cyberpunk2077_portada-pq.jpg" class="card-img-top img-carta-pq shadow" alt="...">
       <div class="card-body">
         <div class="carta-pq-titulo">
@@ -1001,6 +1121,64 @@
 
   </div> <!-- Fin card-group  -->
 
+  <br>
+  <br>
+
+  <div class="grupo-cartas-hz"> <!--  Card-group  -->
+    <div class="card text-white carta-hz shadow">
+      <div class="row g-0">
+        <div class="col-md-4" style="padding: 0px;">
+          <div>
+            <img src="src/portadas/pq/StardewValley_portada-pq.jpg" class="card-img-top img-carta-hz shadow" alt="..."
+              style="align-items: start;">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body" style="height: 100%;">
+            <div class="carta-hz-titulo">
+              <h3 class="card-title">Stardew Valley</h3>
+
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's
+                content.</p>
+            </div>
+            <div class="d-grid gap-2 carta-hz-precio">
+              <div class="btn-carta-hz shadow">
+                $35.500
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card text-white carta-hz shadow">
+      <div class="row g-0">
+        <div class="col-md-4" style="padding: 0px;">
+          <div>
+            <img src="src/portadas/pq/AShortHike_portada-pq.jpg" class="card-img-top img-carta-hz shadow" alt="..."
+              style="align-items: start;">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body" style="height: 100%;">
+            <div class="carta-hz-titulo">
+              <h3 class="card-title">A Short Hike</h3>
+
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's
+                content.</p>
+            </div>
+            <div class="d-grid gap-2 carta-hz-precio">
+              <div class="btn-carta-hz shadow">
+                $35.500
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- Fin card-group  -->
 
   <br>
   <br>
@@ -1141,6 +1319,67 @@
 
   </div>
 
+  <br>
+
+  <div style="display: flex; gap: 20px">
+
+    <div class="card text-white carta-hz shadow">
+      <div class="row g-0">
+        <div class="col-md-4" style="padding: 0px;">
+          <div>
+            <img src="src/portadas/pq/StardewValley_portada-pq.jpg" class="card-img-top img-carta-hz shadow" alt="..."
+              style="align-items: start;">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body" style="height: 100%;">
+            <div class="carta-hz-titulo">
+              <h3 class="card-title">Stardew Valley</h3>
+
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's
+                content.</p>
+            </div>
+            <div class="d-grid gap-2 carta-hz-precio">
+              <div class="btn-carta-hz shadow">
+                $35.500
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card text-white carta-hz shadow">
+      <div class="row g-0">
+        <div class="col-md-4" style="padding: 0px;">
+          <div>
+            <img src="src/portadas/pq/AShortHike_portada-pq.jpg" class="card-img-top img-carta-hz shadow" alt="..."
+              style="align-items: start;">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body" style="height: 100%;">
+            <div class="carta-hz-titulo">
+              <h3 class="card-title">A Short Hike</h3>
+
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                card's
+                content.</p>
+            </div>
+            <div class="d-grid gap-2 carta-hz-precio">
+              <div class="btn-carta-hz shadow">
+                $35.500
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
