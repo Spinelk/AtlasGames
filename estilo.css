@@ -105,7 +105,7 @@ body {
 
 .carta-hz-precio {
   align-items: end;
-  height: 25%;  
+  height: 25%;
 }
 
 .btn-carta-hz {
@@ -188,6 +188,7 @@ body {
   display: flex;
   margin: auto;
 }
+
 /* grupo cartas pequeñas */
 
 /* grupo cartas medianas */
@@ -196,6 +197,7 @@ body {
   display: flex;
   margin: auto;
 }
+
 /* grupo cartas medianas */
 
 /* grupo cartas horizontales */
@@ -204,6 +206,7 @@ body {
   display: flex;
   margin: auto;
 }
+
 /* grupo cartas horizontales */
 
 
@@ -249,15 +252,82 @@ body {
 .btn-carrusel:hover {
   color: white;
 }
+
 /* carrusel */
 
 
 .componente {
-  padding: 50px;
+  padding: 50px 25px 25px 50px;
   max-width: 100%;
-  background-color: red;
+  /* background-color:  red; */
 }
 
 .barra-superior {
   background-color: var(--moradoClaro);
+}
+
+.cabezera {
+  background-color: var(--moradoClaro);
+  border-radius: 5px;
+  width: var(--ancho-maximo);
+  padding: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+.videojuego {
+  width: var(--ancho-maximo);  
+  display: flex;
+  margin: auto;
+  border-radius: 5px;
+
+  background-color: aqua;
+  justify-content: space-between;
+}
+
+.carta-videojuego {
+  width: 75%;
+  background-color: var(--moradoClaro);
+  background-image: url("src/portadas/gd/Cyberpunk2077_portada-gd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  aspect-ratio: 16/9;
+
+
+  display: flex;
+  align-items: end;
+}
+
+.videojuego-img {
+  width: 100%;
+  aspect-ratio: 16/6;
+  border-radius: 5px;
+}
+
+.videojuego-descripcion {
+  background-color: #2a1f49;
+
+  width: 100%;
+  min-height: 10rem;
+  color: white;
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: larger;
+  
+}
+
+.titulo-juego {
+  color: white;
+  width: 75%;
+  background-color: yellow;
+}
+
+.informacion-videojuego {
+  background-color: var(--moradoClaro);
+  width: 23%;
 }
