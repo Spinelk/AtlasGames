@@ -4,6 +4,3 @@
     cursor: pointer;
     z-index: 1;
 }
-.tamaño-carta {
-    transition: all 0.1s ease-in-out;
-}
