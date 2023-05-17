@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Layout Tienda</title>
+
+        <!-- Referencia a Bootstrap 5 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+            crossorigin="anonymous"
+        />
+        <!-- Referencia a jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- Referencia a CSS -->
+        <link rel="stylesheet" href="css/colores.css" />
+        <link rel="stylesheet" href="css/zoom-cartas.css" />
+    </head>
+
+    <body class="text-white bg-moradoOscuro" onload="replicarElemento()">
+        <header>
+            <nav
+                class="navbar navbar-expand-lg text-white bg-moradoClaro fixed-top"
+                data-bs-theme="dark"
+            >
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-bold text-verdeBrillante" href="#"
+                        >ATLAS GAMES</a
+                    >
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup"
+                        aria-controls="navbarNavAltMarkup"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarNavAltMarkup"
+                    >
+                        <div class="navbar-nav">
+                            <a
+                                class="nav-link fw-semibold"
+                                aria-current="page"
+                                href="index.html"
+                                >Descubrir</a
+                            >
+                            <a class="nav-link fw-semibold" href="#"
+                                >Explorar</a
+                            >
+                            <a class="nav-link fw-semibold" href="#"
+                                >Noticias</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Espaciador -->
+        <div class="p-4 mb-5"></div>
+
+        <main class="mt-5">
+            <article class="container-sm my-5">
+                <!-- <div class="row p-3">
+                    <div class="col">
+                        <section class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg">
+                            <h1 class="fs-4 fw-semibold">Cyberpunk 2077</h1>
+                        </section>
+                    </div>
+                </div> -->
+
+                <div class="row row-cols-1 row-cols-lg-2 p-3">
+                    <div class="col col-lg-8 col-xl-9">
+                        <section
+                            class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg"
+                        >
+                            <figure>
+                                <img
+                                    src="src/portadas/gd/Fortnite_portada-gd.jpg"
+                                    class="card-img-top rounded-4 col col-md-6 col-lg-8 shadow-lg object-fit-cover ratio ratio-16x9"
+                                    alt="Portada de Cyberpunk 2077"
+                                />
+                            </figure>
+                            <div class="card-body">
+                                <h1
+                                    class="card-title fs-2 fw-bold text-capitalize"
+                                >
+                                    Fortnite
+                                </h1>
+                                <p class="card-text">
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing elit. Aperiam dolor nam eos
+                                    omnis debitis? Quis, obcaecati reiciendis
+                                    quaerat consequatur officia ut hic
+                                    asperiores nostrum fuga sequi accusantium
+                                    porro placeat esse!
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="col col-lg-4 col-xl-3 gy-3 gy-lg-0">
+                        <section
+                            class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg"
+                        >
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                </p>
+                                <p class="card-text">
+                                    Lorem ipsum dolor sit amet consectetur
+                                    adipisicing elit.
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </article>
+
+
+            <article class="container-sm my-5">
+                <div class="row p-3">
+                    <div class="col">
+                        <section
+                            class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
+                        >
+                            <h1 class="fs-4 fw-bold">Epic Games</h1>
+                        </section>
+                    </div>
+                </div>
+                <div
+                    class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 p-3"
+                    id="grupo-cartas-2"
+                >
+                    <div class="col" id="carta-2">
+                        <a href="cyberpunk2077.html" class="text-decoration-none">
+                            <section
+                                class="col card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta"
+                            >
+                                <img
+                                    src="src/portadas/pq/ThwWitcher3_portada-pq.jpg"
+                                    class="card-img-top rounded-4 shadow-lg"
+                                    alt="..."
+                                />
+                                <div class="card-body">
+                                    <h3 class="card-title fs-5 fw-bold">
+                                        The Witcher 3: Wild Hunt
+                                    </h3>
+                                </div>
+                                <div class="card-footer fw-bold border-0">
+                                    <small
+                                        class="text-white fs-6 text-verdeBrillante"
+                                        >$20.000</small
+                                    >
+                                </div>
+                            </section>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+
+        </main>
+
+        <footer class="py-3 text-white bg-moradoClaro mt-5">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-white">Descubrir</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-white">Explorar</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-white">Noticias</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-white">Acerca de</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-white">Contacto</a>
+                </li>
+            </ul>
+            <p class="text-center text-white">© 2023 Atlas Games</p>
+        </footer>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"
+        ></script>
+
+        <script>
+            function replicarElemento() {
+                for (var i = 0; i < 5; i++) {
+                    jQuery("#carta").clone().appendTo("#grupo-cartas");
+                }
+
+                for (var i = 0; i < 5; i++) {
+                    jQuery("#carta-2").clone().appendTo("#grupo-cartas-2");
+                }
+            }
+
+        </script>
+    </body>
+</html>
