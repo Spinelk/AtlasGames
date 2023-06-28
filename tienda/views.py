@@ -2,7 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    productos = Producto.objects.all()
+    return render(request, 'index.html', {'productos': productos})
 
 def noticias(request):
     return render(request, 'noticias.html')
@@ -13,8 +14,9 @@ def inicio_sesion(request):
 def registro(request):
     return render(request, 'registro.html')
 
-def juego(request):
-    return render(request, 'juego.html')
+def juego(request, producto_id):
+    producto = Producto.objects.get(id=producto_id)
+    return render(request, 'juego.html', {'producto': producto})
 
 
 

@@ -11,7 +11,7 @@ urlpatterns = [
     path("noticias", noticias, name="noticias"),
     path("iniciosesion", inicio_sesion, name="iniciosesion"),
     path("registro", registro, name="registro"),
-    path("juego", juego, name="registro"),
+    path("juego/<int:producto_id>/", juego, name="registro"),
 
     
     # path('admin/dashboard/', admin_dashboard, name='admin_dashboard'),

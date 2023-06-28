@@ -1,7 +1,4 @@
-{% extends 'layouts/app.html' %}
-{% block contenido %}
-
-
+{% extends 'layouts/app.html' %} {% block contenido %}
 
 <main class="mt-5">
     <article class="container-sm my-5">
@@ -18,33 +15,31 @@
             class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 p-3"
             id="grupo-cartas-2"
         >
+            {% for producto in productos %} {% if forloop.counter <= 3 %}
             <div class="col" id="carta-2">
-                <a
-                    href="cyberpunk2077.html"
-                    class="text-decoration-none"
-                >
+                <a href="/juego/{{ producto.id }}/" class="text-decoration-none">
                     <section
                         class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta"
                     >
                         <img
-                            src="src/portadas/md/ResidentEvil4_portada-md.jpg"
+                            src="{{ producto.foto_md.url }}"
                             class="card-img-top rounded-4 shadow-lg"
                             alt="..."
                         />
                         <div class="card-body">
                             <h3 class="card-title fs-5 fw-bold">
-                                Cyberpunk 2077
+                                {{ producto.nombre }}
                             </h3>
                         </div>
                         <div class="card-footer fw-bold border-0">
-                            <small
-                                class="text-white fs-6 text-verdeBrillante"
-                                >$35.000</small
+                            <small class="text-white fs-6 text-verdeBrillante"
+                                >${{ producto.precio }}</small
                             >
                         </div>
                     </section>
                 </a>
             </div>
+            {% endif %} {% endfor %}
         </div>
     </article>
 
@@ -61,31 +56,17 @@
         <div class="row p-3">
             <div id="carouselExample" class="carousel slide w-100">
                 <div class="carousel-inner rounded-4 shadow-lg">
+                    {% for producto in productos %} {% if forloop.counter <= 3 %}
                     <div class="carousel-item active">
-                        <a href="lol.html">
+                        <a href="/juego/{{ producto.id }}/">
                             <img
-                                src="src/portadas/gd/LeagueOfLegends_portada-gd.jpeg"
+                                src="{{ producto.foto_gd.url }}"
                                 class="d-block w-100 ratio ratio-19x9 rounded-4 tamaño-carta"
                                 alt="..."
                             />
                         </a>
                     </div>
-                    <div class="carousel-item">
-                        <a href="rocketLeague.html">
-                            <img
-                                src="src/portadas/gd/RocketLeague_portada-gd.jpg"
-                                class="d-block w-100 w-100 ratio ratio-19x9 rounded-4 tamaño-carta"
-                                alt="..."
-                        /></a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="fortnite.html">
-                            <img
-                                src="src/portadas/gd/Fortnite_portada-gd.jpg"
-                                class="d-block w-100 w-100 ratio ratio-19x9 rounded-4 tamaño-carta"
-                                alt="..."
-                        /></a>
-                    </div>
+                    {% endif %} {% endfor %}
                 </div>
                 <button
                     class="carousel-control-prev z-1"
@@ -129,33 +110,31 @@
             class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 p-3"
             id="grupo-cartas"
         >
+            {% for producto in productos %} {% if forloop.counter <= 6 %}
             <div class="col" id="carta">
-                <a
-                    href="cyberpunk2077.html"
-                    class="text-decoration-none"
-                >
+                <a href="/juego/{{ producto.id }}/" class="text-decoration-none">
                     <section
                         class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta"
                     >
                         <img
-                            src="src/portadas/pq/Cyberpunk2077_portada-pq.jpg"
+                            src="{{ producto.foto_pq.url }}"
                             class="card-img-top rounded-4 shadow-lg"
                             alt="..."
                         />
                         <div class="card-body">
                             <h3 class="card-title fs-5 fw-bold">
-                                Cyberpunk 2077
+                                {{ producto.nombre }}
                             </h3>
                         </div>
                         <div class="card-footer fw-bold border-0">
-                            <small
-                                class="text-white fs-6 text-verdeBrillante"
-                                >$35.000</small
+                            <small class="text-white fs-6 text-verdeBrillante"
+                                >${{ producto.precio }}</small
                             >
                         </div>
                     </section>
                 </a>
             </div>
+            {% endif %} {% endfor %}
         </div>
     </article>
 
@@ -172,27 +151,24 @@
 
         <div class="row p-3">
             <div class="col">
-                <div
-                    class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
-                >
+                <div class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg">
                     <div
                         class="row row-cols-1 row-cols-lg-2 g-4 p-3"
                         id="grupo-cartas-2"
                     >
+                    {% for producto in productos %} {% if forloop.counter <= 2 %}
                         <div class="col" id="carta-2">
                             <a
-                                href="cyberpunk2077.html"
+                                href="/juego/{{ producto.id }}/"
                                 class="text-decoration-none"
                             >
                                 <section
                                     class="card mb-3 bg-moradoOscuro text-white rounded-4 shadow-lg border-0 g-0"
                                 >
-                                    <div
-                                        class="row row-cols-2 rounded-4"
-                                    >
+                                    <div class="row row-cols-2 rounded-4">
                                         <div class="col-md-6">
                                             <img
-                                                src="src/portadas/pq/AShortHike_portada-pq.jpg"
+                                                src="{{ producto.foto_pq.url }}"
                                                 class="img-fluid rounded-4 h-100"
                                                 alt="..."
                                             />
@@ -205,17 +181,10 @@
                                                 <h3
                                                     class="card-title fs-2 fw-bold"
                                                 >
-                                                    A Short Hike
+                                                {{ producto.nombre }}
                                                 </h3>
-                                                <p
-                                                    class="card-title fs-4"
-                                                >
-                                                    Lorem ipsum dolor
-                                                    sit amet consectetur
-                                                    adipisicing elit.
-                                                    Quia pariatur
-                                                    impedit odio minima
-                                                    delectus adipisci.
+                                                <p class="card-title fs-4">
+                                                    {{ producto.descripción }}
                                                 </p>
                                             </div>
 
@@ -224,7 +193,7 @@
                                             >
                                                 <small
                                                     class="text-white fs-3 text-verdeBrillante"
-                                                    >$2.000</small
+                                                    >${{ producto.precio }}</small
                                                 >
                                             </div>
                                         </div>
@@ -232,60 +201,7 @@
                                 </section>
                             </a>
                         </div>
-
-                        <div class="col" id="carta-2">
-                            <a
-                                href="cyberpunk2077.html"
-                                class="text-decoration-none"
-                            >
-                                <section
-                                    class="card mb-3 bg-moradoOscuro text-white rounded-4 shadow-lg border-0 g-0"
-                                >
-                                    <div
-                                        class="row row-cols-2 rounded-4"
-                                    >
-                                        <div class="col-md-6">
-                                            <img
-                                                src="src/portadas/pq/AShortHike_portada-pq.jpg"
-                                                class="img-fluid rounded-4 h-100"
-                                                alt="..."
-                                            />
-                                        </div>
-
-                                        <div
-                                            class="col-md-6 d-flex flex-column g-0 ps-1 pe-4"
-                                        >
-                                            <div class="card-body">
-                                                <h3
-                                                    class="card-title fs-2 fw-bold"
-                                                >
-                                                    A Short Hike
-                                                </h3>
-                                                <p
-                                                    class="card-title fs-4"
-                                                >
-                                                    Lorem ipsum dolor
-                                                    sit amet consectetur
-                                                    adipisicing elit.
-                                                    Quia pariatur
-                                                    impedit odio minima
-                                                    delectus adipisci.
-                                                </p>
-                                            </div>
-
-                                            <div
-                                                class="card-footer fw-bold border-0"
-                                            >
-                                                <small
-                                                    class="text-white fs-3 text-verdeBrillante"
-                                                    >$2.000</small
-                                                >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                            </a>
-                        </div>
+                        {% endif %} {% endfor %}
                     </div>
                 </div>
             </div>
@@ -293,6 +209,4 @@
     </article>
 </main>
 
-
-
-{% endblock  %} 
+{% endblock %}

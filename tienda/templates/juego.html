@@ -21,7 +21,7 @@
                 >
                     <figure>
                         <img
-                            src="src/portadas/gd/Cyberpunk2077_portada-gd.jpg"
+                            src="{{ producto.foto_gd.url }}"
                             class="card-img-top rounded-4 col col-md-6 col-lg-8 shadow-lg object-fit-cover ratio ratio-16x9"
                             alt="Portada de Cyberpunk 2077"
                         />
@@ -30,15 +30,10 @@
                         <h1
                             class="card-title fs-2 fw-bold text-capitalize"
                         >
-                            Cyberpunk 2077
+                            {{ producto.nombre }}
                         </h1>
                         <p class="card-text">
-                            Lorem ipsum dolor, sit amet consectetur
-                            adipisicing elit. Aperiam dolor nam eos
-                            omnis debitis? Quis, obcaecati reiciendis
-                            quaerat consequatur officia ut hic
-                            asperiores nostrum fuga sequi accusantium
-                            porro placeat esse!
+                            {{ producto.descripcion }}
                         </p>
                     </div>
                 </section>
@@ -92,7 +87,7 @@
     </article>
 
 
-    <article class="container-sm my-5">
+    <!-- <article class="container-sm my-5">
         <div class="row p-3">
             <div class="col">
                 <section
@@ -131,7 +126,7 @@
                 </a>
             </div>
         </div>
-    </article>
+    </article> -->
 
 
 </main>
