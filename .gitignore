@@ -2,3 +2,6 @@
 __pycache__/
 *.pyc
 *.pyo
+
+# Carpetas __pycache__ específicas de Django
+**/__pycache__/
