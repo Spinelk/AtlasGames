@@ -22,7 +22,7 @@ class Estudio(models.Model):
 
 class Videojuego(models.Model):
     nombre = models.CharField(max_length=100)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    precio = models.IntegerField()
     descripcion = models.TextField()
     foto_pq = models.ImageField(upload_to='videojuego/portada/pq')
     foto_md = models.ImageField(upload_to='videojuego/portada/md')
