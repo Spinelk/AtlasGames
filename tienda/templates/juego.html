@@ -1,19 +1,7 @@
-{% extends 'layouts/app.html' %}
-{% block contenido %}
-
-
-
+{% extends 'layouts/app.html' %} {% block contenido %}
 
 <main class="mt-5">
     <article class="container-sm my-5">
-        <!-- <div class="row p-3">
-            <div class="col">
-                <section class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg">
-                    <h1 class="fs-4 fw-semibold">Cyberpunk 2077</h1>
-                </section>
-            </div>
-        </div> -->
-
         <div class="row row-cols-1 row-cols-lg-2 p-3">
             <div class="col col-lg-8 col-xl-9">
                 <section
@@ -27,14 +15,22 @@
                         />
                     </figure>
                     <div class="card-body">
-                        <h1
-                            class="card-title fs-2 fw-bold text-capitalize"
-                        >
-                            {{ videojuego.nombre }}
-                        </h1>
-                        <p class="card-text">
-                            {{ videojuego.descripcion }}
-                        </p>
+                        <div class="d-flex justify-content-between">
+                            <h1 class="card-title fs-1 fw-bold text-capitalize">
+                                {{ videojuego.nombre }}
+                            </h1>
+                            <h1 class="card-title fs-2 fw-bold text-capitalize">
+                                ${{ videojuego.precio }}
+                            </h1>
+                        </div>
+                        <div class="row row-cols-2 justify-content-between mt-3">
+                            <p class="col col-9 card-text fs-5 fw-semibold">
+                                {{ videojuego.descripcion }}
+                            </p>
+                            <div class="col col-3">
+                                <button class="btn btn-primary bg-verdeBrillante text-black border-0 rounded-4 fs-2 fw-bold" style="width: 100%; aspect-ratio: 4/1;">Comprar</button>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -44,69 +40,45 @@
                     class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg"
                 >
                     <div class="card-body">
-                        <p class="card-text">
-                            Requisitos Minimos:
-                        </p>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.
-                        </p>
+                        <p class="card-text fw-bold">Genero:</p>
+                        <p class="card-text">{{ videojuego.genero }}</p>
 
-                        <br>
+                        <br />
 
-                        <p class="card-text">
+                        <p class="card-text fw-bold">Estudio:</p>
+                        <p class="card-text">{{ videojuego.estudio }}</p>
+
+                        <br />
+
+                        <p class="card-text fw-bold">Clasificación:</p>
+                        <p class="card-text">PEGI xx</p>
+
+                        <p class="card-text fw-bold">Requisitos Minimos:</p>
+                        <ul class="card-text">
+                            <li>Sistema Operativo:</li>
+                            <li>Ram:</li>
+                            <li>Almacenamiento</li>
+                            <li>Procesador</li>
+                            <li>Tarjeta Grafica:</li>
+                        </ul>
+
+                        <br />
+
+                        <p class="card-text fw-bold">
                             Requisitos Recomendados:
                         </p>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.
-                        </p>
-
-                        <br>
-
-                        <p class="card-text">
-                            Valoraciones:
-                        </p>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.
-                        </p>
-
-                        <br>
-
-                        <p class="card-text">
-                            Clasificación
-                        </p>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.
-                        </p>             
-
-                        <br>
-
-                        <p class="card-text">
-                            Titulo:
-                        </p>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.
-                        </p>
-
-                        <br>
-
-                        <p class="card-text">
-                            Titulo:
-                        </p>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.
-                        </p>
+                        <ul class="card-text">
+                            <li>Sistema Operativo:</li>
+                            <li>Ram:</li>
+                            <li>Almacenamiento</li>
+                            <li>Procesador</li>
+                            <li>Tarjeta Grafica:</li>
+                        </ul>
                     </div>
                 </section>
             </div>
         </div>
     </article>
-
 
     <article class="container-sm my-5">
         <div class="row p-3">
@@ -114,7 +86,9 @@
                 <section
                     class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
                 >
-                    <h1 class="fs-4 fw-bold">Mas de </h1>
+                    <h1 class="fs-4 fw-bold">
+                        Mas de {{ videojuego.estudio }}
+                    </h1>
                 </section>
             </div>
         </div>
@@ -124,7 +98,10 @@
         >
             {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
             <div class="col" id="carta">
-                <a href="/juego/{{ videojuego.id }}/" class="text-decoration-none">
+                <a
+                    href="/juego/{{ videojuego.id }}/"
+                    class="text-decoration-none"
+                >
                     <section
                         class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta"
                     >
@@ -149,10 +126,6 @@
             {% endif %} {% endfor %}
         </div>
     </article>
-        
-
-
 </main>
 
-
-{% endblock  %} 
+{% endblock %}
