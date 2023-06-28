@@ -15,25 +15,25 @@
             class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 p-3"
             id="grupo-cartas-2"
         >
-            {% for producto in productos %} {% if forloop.counter <= 3 %}
+            {% for videojuego in videojuegos %} {% if forloop.counter <= 3 %}
             <div class="col" id="carta-2">
-                <a href="/juego/{{ producto.id }}/" class="text-decoration-none">
+                <a href="/juego/{{ videojuego.id }}/" class="text-decoration-none">
                     <section
                         class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta"
                     >
                         <img
-                            src="{{ producto.foto_md.url }}"
+                            src="{{ videojuego.foto_md.url }}"
                             class="card-img-top rounded-4 shadow-lg"
                             alt="..."
                         />
                         <div class="card-body">
                             <h3 class="card-title fs-5 fw-bold">
-                                {{ producto.nombre }}
+                                {{ videojuego.nombre }}
                             </h3>
                         </div>
                         <div class="card-footer fw-bold border-0">
                             <small class="text-white fs-6 text-verdeBrillante"
-                                >${{ producto.precio }}</small
+                                >${{ videojuego.precio }}</small
                             >
                         </div>
                     </section>
@@ -56,11 +56,11 @@
         <div class="row p-3">
             <div id="carouselExample" class="carousel slide w-100">
                 <div class="carousel-inner rounded-4 shadow-lg">
-                    {% for producto in productos %} {% if forloop.counter <= 3 %}
+                    {% for videojuego in videojuegos %} {% if forloop.counter <= 3 %}
                     <div class="carousel-item active">
-                        <a href="/juego/{{ producto.id }}/">
+                        <a href="/juego/{{ videojuego.id }}/">
                             <img
-                                src="{{ producto.foto_gd.url }}"
+                                src="{{ videojuego.foto_gd.url }}"
                                 class="d-block w-100 ratio ratio-19x9 rounded-4 tamaño-carta"
                                 alt="..."
                             />
@@ -110,25 +110,25 @@
             class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 p-3"
             id="grupo-cartas"
         >
-            {% for producto in productos %} {% if forloop.counter <= 6 %}
+            {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
             <div class="col" id="carta">
-                <a href="/juego/{{ producto.id }}/" class="text-decoration-none">
+                <a href="/juego/{{ videojuego.id }}/" class="text-decoration-none">
                     <section
                         class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta"
                     >
                         <img
-                            src="{{ producto.foto_pq.url }}"
+                            src="{{ videojuego.foto_pq.url }}"
                             class="card-img-top rounded-4 shadow-lg"
                             alt="..."
                         />
                         <div class="card-body">
                             <h3 class="card-title fs-5 fw-bold">
-                                {{ producto.nombre }}
+                                {{ videojuego.nombre }}
                             </h3>
                         </div>
                         <div class="card-footer fw-bold border-0">
                             <small class="text-white fs-6 text-verdeBrillante"
-                                >${{ producto.precio }}</small
+                                >${{ videojuego.precio }}</small
                             >
                         </div>
                     </section>
@@ -156,10 +156,10 @@
                         class="row row-cols-1 row-cols-lg-2 g-4 p-3"
                         id="grupo-cartas-2"
                     >
-                    {% for producto in productos %} {% if forloop.counter <= 2 %}
+                    {% for videojuego in videojuegos %} {% if forloop.counter <= 2 %}
                         <div class="col" id="carta-2">
                             <a
-                                href="/juego/{{ producto.id }}/"
+                                href="/juego/{{ videojuego.id }}/"
                                 class="text-decoration-none"
                             >
                                 <section
@@ -168,7 +168,7 @@
                                     <div class="row row-cols-2 rounded-4">
                                         <div class="col-md-6">
                                             <img
-                                                src="{{ producto.foto_pq.url }}"
+                                                src="{{ videojuego.foto_pq.url }}"
                                                 class="img-fluid rounded-4 h-100"
                                                 alt="..."
                                             />
@@ -181,10 +181,10 @@
                                                 <h3
                                                     class="card-title fs-2 fw-bold"
                                                 >
-                                                {{ producto.nombre }}
+                                                {{ videojuego.nombre }}
                                                 </h3>
                                                 <p class="card-title fs-4">
-                                                    {{ producto.descripción }}
+                                                    {{ videojuego.descripción }}
                                                 </p>
                                             </div>
 
@@ -193,7 +193,7 @@
                                             >
                                                 <small
                                                     class="text-white fs-3 text-verdeBrillante"
-                                                    >${{ producto.precio }}</small
+                                                    >${{ videojuego.precio }}</small
                                                 >
                                             </div>
                                         </div>

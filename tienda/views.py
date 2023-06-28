@@ -1,17 +1,17 @@
 from django.shortcuts import render
-from tienda.models import Producto
+from tienda.models import Videojuego
 from tienda.models import Noticia
 
 
 
 # Create your views here.
 def index(request):
-    productos = Producto.objects.all()
-    return render(request, 'index.html', {'productos': productos})
+    videojuegos = Videojuego.objects.all()
+    return render(request, 'index.html', {'videojuegos': videojuegos})
 
 def noticias(request):
-    noticias = Noticia.objects.all()
-    return render(request, 'noticias.html', {'noticias': noticias})
+    videojuegos = Videojuego.objects.all()
+    return render(request, 'noticias.html', {'videojuegos': videojuegos})
 
 def inicio_sesion(request):
     return render(request, 'inicioSesion.html')
@@ -19,9 +19,9 @@ def inicio_sesion(request):
 def registro(request):
     return render(request, 'registro.html')
 
-def juego(request, producto_id):
-    producto = Producto.objects.get(id=producto_id)
-    return render(request, 'juego.html', {'producto': producto})
+def juego(request, videojuego_id):
+    videojuego = Videojuego.objects.get(id=videojuego_id)
+    return render(request, 'juego.html', {'videojuegos': videojuegos})
 
 
 
@@ -33,10 +33,12 @@ def juego(request, producto_id):
 
 def tienda(request):
     # Vista para la tienda online
-    productos = Producto.objects.all()
-    return render(request, 'tienda/tienda.html', {'productos': productos})
+    videojuegos = Videojuego.objects.all()
+    return render(request, 'tienda/tienda.html', {'videojuegos': videojuegos})
 
-def detalle_producto(request, producto_id):
+def detalle_producto(request, videojuego_id):
     # Vista para mostrar los detalles de un producto en particular
-    producto = Producto.objects.get(id=producto_id)
-    return render(request, 'tienda/detalle_producto.html', {'producto': producto})
+    videojuego = Videojuego.objects.get(id=videojuego_id)
+
+    return render(request, 'tienda/detalle_producto.html', {'videojuego': videojuego})
+
