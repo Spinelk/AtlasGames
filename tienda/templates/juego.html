@@ -45,36 +45,57 @@
                 >
                     <div class="card-body">
                         <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.
+                            Requisitos Minimos:
                         </p>
                         <p class="card-text">
                             Lorem ipsum dolor sit amet consectetur
                             adipisicing elit.
                         </p>
+
+                        <br>
+
                         <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.
+                            Requisitos Recomendados:
                         </p>
                         <p class="card-text">
                             Lorem ipsum dolor sit amet consectetur
                             adipisicing elit.
                         </p>
+
+                        <br>
+
                         <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.
+                            Valoraciones:
                         </p>
                         <p class="card-text">
                             Lorem ipsum dolor sit amet consectetur
                             adipisicing elit.
                         </p>
+
+                        <br>
+
                         <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit.
+                            Clasificación
                         </p>
                         <p class="card-text">
                             Lorem ipsum dolor sit amet consectetur
                             adipisicing elit.
+                        </p>             
+
+                        <br>
+
+                        <p class="card-text">
+                            Titulo:
+                        </p>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit.
+                        </p>
+
+                        <br>
+
+                        <p class="card-text">
+                            Titulo:
                         </p>
                         <p class="card-text">
                             Lorem ipsum dolor sit amet consectetur
@@ -87,46 +108,48 @@
     </article>
 
 
-    <!-- <article class="container-sm my-5">
+    <article class="container-sm my-5">
         <div class="row p-3">
             <div class="col">
                 <section
                     class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
                 >
-                    <h1 class="fs-4 fw-bold">CDProjektRED</h1>
+                    <h1 class="fs-4 fw-bold">Mas de </h1>
                 </section>
             </div>
         </div>
         <div
             class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 p-3"
-            id="grupo-cartas-2"
+            id="grupo-cartas"
         >
-            <div class="col" id="carta-2">
-                <a href="cyberpunk2077.html" class="text-decoration-none">
+            {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
+            <div class="col" id="carta">
+                <a href="/juego/{{ videojuego.id }}/" class="text-decoration-none">
                     <section
-                        class="col card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta"
+                        class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta"
                     >
                         <img
-                            src="src/portadas/pq/ThwWitcher3_portada-pq.jpg"
+                            src="{{ videojuego.foto_pq.url }}"
                             class="card-img-top rounded-4 shadow-lg"
                             alt="..."
                         />
                         <div class="card-body">
                             <h3 class="card-title fs-5 fw-bold">
-                                The Witcher 3: Wild Hunt
+                                {{ videojuego.nombre }}
                             </h3>
                         </div>
                         <div class="card-footer fw-bold border-0">
-                            <small
-                                class="text-white fs-6 text-verdeBrillante"
-                                >$20.000</small
+                            <small class="text-white fs-6 text-verdeBrillante"
+                                >${{ videojuego.precio }}</small
                             >
                         </div>
                     </section>
                 </a>
             </div>
+            {% endif %} {% endfor %}
         </div>
-    </article> -->
+    </article>
+        
 
 
 </main>

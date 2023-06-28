@@ -10,8 +10,9 @@ def index(request):
     return render(request, 'index.html', {'videojuegos': videojuegos})
 
 def juego(request, videojuego_id):
+    videojuegos = Videojuego.objects.all()
     videojuego = Videojuego.objects.get(id=videojuego_id)
-    return render(request, 'juego.html', {'videojuego': videojuego})
+    return render(request, 'juego.html', {'videojuego': videojuego, 'videojuegos': videojuegos})
 
 
 def noticias(request):
@@ -20,10 +21,10 @@ def noticias(request):
 
 
 def inicio_sesion(request):
-    return render(request, 'inicioSesion.html')
+    return render(request, 'usuarios/inicioSesion.html')
 
 def registro(request):
-    return render(request, 'registro.html')
+    return render(request, 'usuarios/registro.html')
 
 
 

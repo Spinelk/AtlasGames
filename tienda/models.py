@@ -13,6 +13,13 @@ class Genero(models.Model):
         return self.nombre
 
 
+class Estudio(models.Model):
+    nombre = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre
+        
+
 class Videojuego(models.Model):
     nombre = models.CharField(max_length=100)
     precio = models.DecimalField(max_digits=10, decimal_places=2)
@@ -21,7 +28,7 @@ class Videojuego(models.Model):
     foto_md = models.ImageField(upload_to='videojuego/portada/md')
     foto_gd = models.ImageField(upload_to='videojuego/portada/gd')
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
-    id_usuario = models.IntegerField()
+    estudio = models.ForeignKey(Estudio, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre
