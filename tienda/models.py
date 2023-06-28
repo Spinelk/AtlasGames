@@ -1,5 +1,11 @@
 from django.db import models
 
+# Imports para borrar las imagenes si se borra el 'objeto'
+from django.dispatch import receiver
+from django.db.models.signals import post_delete
+from django.conf import settings
+import os
+
 class Genero(models.Model):
     nombre = models.CharField(max_length=100)
 
@@ -21,10 +27,7 @@ class Videojuego(models.Model):
         return self.nombre
 
     
-from django.dispatch import receiver
-from django.db.models.signals import post_delete
-from django.conf import settings
-import os
+
 @receiver(post_delete, sender=Videojuego)
 def eliminar_imagen(sender, instance, **kwargs):
     if instance.foto:
