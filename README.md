@@ -13,6 +13,8 @@ cd AtlasGames
 
 pip install -r requerimientos.txt
 
+python manage.py runserver
+
 ```
 
 ## Migraciones
