@@ -11,11 +11,11 @@ urlpatterns = [
     path("noticias", noticias, name="noticias"),
     path("iniciosesion", inicio_sesion, name="iniciosesion"),
     path("registro", registro, name="registro"),
-    path("juego/<int:producto_id>/", juego, name="registro"),
+    path("juego/<int:videojuego_id>/", juego, name="registro"),
 
     
     # path('admin/dashboard/', admin_dashboard, name='admin_dashboard'),
     path('tienda/', tienda, name='tienda'),
-    path('tienda/producto/<int:producto_id>/', detalle_producto, name='detalle_producto'),
+    path('tienda/videojuego/<int:videojuego_id>/', detalle_producto, name='detalle_producto'),
     # Agrega más URL según tus necesidades
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

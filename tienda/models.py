@@ -30,9 +30,21 @@ class Videojuego(models.Model):
 
 @receiver(post_delete, sender=Videojuego)
 def eliminar_imagen(sender, instance, **kwargs):
-    if instance.foto:
+    if instance.foto_pq:
         # Eliminar la imagen asociada al videojuego
-        ruta_imagen = os.path.join(settings.MEDIA_ROOT, str(instance.foto))
+        ruta_imagen = os.path.join(settings.MEDIA_ROOT, str(instance.foto_pq))
+        if os.path.exists(ruta_imagen):
+            os.remove(ruta_imagen)
+
+    if instance.foto_md:
+        # Eliminar la imagen asociada al videojuego
+        ruta_imagen = os.path.join(settings.MEDIA_ROOT, str(instance.foto_md))
+        if os.path.exists(ruta_imagen):
+            os.remove(ruta_imagen)
+
+    if instance.foto_gd:
+        # Eliminar la imagen asociada al videojuego
+        ruta_imagen = os.path.join(settings.MEDIA_ROOT, str(instance.foto_gd))
         if os.path.exists(ruta_imagen):
             os.remove(ruta_imagen)
 

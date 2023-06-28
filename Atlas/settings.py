@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'jazzmin',
 
     'tienda',
+    
 
     'django.contrib.admin',
     'django.contrib.auth',
