@@ -35,38 +35,20 @@ def eliminar_imagen(sender, instance, **kwargs):
 
 
 class Usuario(models.Model):
+    usuario = models.CharField(max_length=100)
     correo = models.EmailField()
+    fecha_nacimiento = models.DateField()
     password = models.CharField(max_length=100)
-    nombres = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.nombre
+        return self.usuario
 
 
-class Cliente(models.Model):
-    correo = models.EmailField()
-    password = models.CharField(max_length=100)
-    nombres = models.CharField(max_length=100)
-    
-    def __str__(self):
-        return self.nombre
-
-
-class Boleta(models.Model):
-    id_cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    total = models.DecimalField(max_digits=10, decimal_places=2)
-    fecha_de_creacion = models.DateField(auto_now_add=True)
+class Noticia(models.Model):
+    titulo = models.CharField(max_length=100)
+    descripcion = models.TextField()
+    fecha = models.DateField()
+    imagen = models.ImageField(upload_to='noticias')
 
     def __str__(self):
-        return self.nombre
-
-
-class DetalleBoleta(models.Model):
-    id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
-    id_boleta = models.ForeignKey(Boleta, on_delete=models.CASCADE)
-    precio = models.DecimalField(max_digits=10, decimal_places=2)
-    cantidad = models.IntegerField()
-    total = models.DecimalField(max_digits=10, decimal_places=2)
-
-    def __str__(self):
-        return self.nombre
+            return self.titulo

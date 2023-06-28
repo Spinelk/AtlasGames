@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from tienda.models import Producto
+from tienda.models import Noticia
+
+
 
 # Create your views here.
 def index(request):
@@ -6,7 +10,8 @@ def index(request):
     return render(request, 'index.html', {'productos': productos})
 
 def noticias(request):
-    return render(request, 'noticias.html')
+    noticias = Noticia.objects.all()
+    return render(request, 'noticias.html', {'noticias': noticias})
 
 def inicio_sesion(request):
     return render(request, 'inicioSesion.html')
@@ -20,7 +25,6 @@ def juego(request, producto_id):
 
 
 
-from tienda.models import Producto
 
 # def admin_dashboard(request):
 #     # Vista para el panel de administración
