@@ -1,0 +1,48 @@
+{% extends 'layouts/app.html' %}
+{% block contenido %}
+
+
+
+<main class="mt-5">
+    <div
+        class="container rounded-4 bg-moradoClaro text-white"
+        style="width: 40%; padding: 20px"
+    >
+        <h1 id="f-nombre">Inicio Sesion</h1>
+
+        <form id="contact-form" method="post">
+            <div class="form-floating mb-3">
+                <input
+                    type="text"
+                    class="form-control rounded-4 border-0 bg-moradoOscuro text-white"
+                    id="usuario"
+                    placeholder="usuario"
+                    required
+                />
+                <label for="usuario" class="">Usuario</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input
+                    type="password"
+                    class="form-control rounded-4 border-0 bg-moradoOscuro text-white"
+                    id="contraseña-1"
+                    placeholder="**********"
+                    required
+                />
+                <label for="contraseña-1">Contraseña</label>
+            </div>
+
+            <div
+                class="btn btn-primary bg-verdeBrillante text-black border-0 rounded-4"
+                onclick="confirmarContraseña(this)"
+            >
+                Registrar
+            </div>
+        </form>
+    </div>
+</main>
+
+
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'layouts/app.html' %}
+{% block contenido %}
+
+
+
+<main class="mt-5">
+    <div
+        class="container rounded-4 bg-moradoClaro text-white"
+        style="width: 40%; padding: 20px"
+    >
+        <h1 id="f-nombre">Registro</h1>
+
+        <form id="contact-form" method="post">
+            <div class="form-floating mb-3">
+                <input
+                    type="text"
+                    class="form-control rounded-4 border-0 bg-moradoOscuro text-white"
+                    id="usuario"
+                    placeholder="usuario"
+                    onkeyup="validarUsuario(this)"
+                    required
+                />
+                <label for="usuario" class="">Usuario</label>
+                <div class="invalid-feedback">
+                    <p><strong>El Usuario debe poseer:</strong></p>
+                    <p id="0">Al menos 3 caracteres</p>
+                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input
+                    type="email"
+                    class="form-control rounded-4 border-0 bg-moradoOscuro text-white"
+                    id="correo"
+                    placeholder="name@example.com"
+                    required
+                />
+                <label for="correo">Correo</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input
+                    type="date"
+                    class="form-control rounded-4 border-0 bg-moradoOscuro text-white"
+                    id="fecha"
+                    placeholder="01/01/1970"
+                    required
+                />
+                <label for="fecha" class="">Fecha de Nacimiento</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input
+                    type="password"
+                    class="form-control rounded-4 border-0 bg-moradoOscuro text-white"
+                    id="contraseña-1"
+                    placeholder="**********"
+                    onkeyup="validarContraseña(this), validarContraseña2($('#contraseña-2')[0])"
+                    required
+                />
+                <label for="contraseña-1">Contraseña</label>
+                <div class="invalid-feedback">
+                    <p><strong>La Contraseña debe poseer</strong></p>
+                    <p id="1">Al menos una letra</p>
+                    <p id="2">Al menos una letra mayuscula</p>
+                    <p id="3">Al menos un número</p>
+                    <p id="4">Al menos 10 caracteres</p>
+                </div>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input
+                    type="password"
+                    class="form-control rounded-4 border-0 bg-moradoOscuro text-white"
+                    id="contraseña-2"
+                    placeholder="**********"
+                    onkeyup="validarContraseña2(this)"
+                    required
+                />
+                <label for="contraseña-2">Confirmar Contraseña</label>
+                <div class="invalid-feedback">
+                    <p id="5">Las contraseñas no coinciden</p>
+                </div>
+            </div>
+
+            <div
+                class="btn btn-primary bg-verdeBrillante text-black border-0 rounded-4"
+                onclick="confirmarContraseña(this)"
+            >
+                Registrar
+            </div>
+        </form>
+    </div>
+</main>
+
+
+
+{% endblock  %} 
