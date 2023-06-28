@@ -1,6 +1,6 @@
 from django.db import models
 
-class Categoria(models.Model):
+class Genero(models.Model):
     nombre = models.CharField(max_length=100)
 
     def __str__(self):
@@ -14,7 +14,7 @@ class Videojuego(models.Model):
     foto_pq = models.ImageField(upload_to='videojuego/portada/pq')
     foto_md = models.ImageField(upload_to='videojuego/portada/md')
     foto_gd = models.ImageField(upload_to='videojuego/portada/gd')
-    categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
     id_usuario = models.IntegerField()
 
     def __str__(self):
@@ -34,16 +34,6 @@ def eliminar_imagen(sender, instance, **kwargs):
             os.remove(ruta_imagen)
 
 
-class Usuario(models.Model):
-    usuario = models.CharField(max_length=100)
-    correo = models.EmailField()
-    fecha_nacimiento = models.DateField()
-    password = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.usuario
-
-
 class Noticia(models.Model):
     titulo = models.CharField(max_length=100)
     descripcion = models.TextField()
@@ -52,3 +42,13 @@ class Noticia(models.Model):
 
     def __str__(self):
             return self.titulo
+
+
+class Usuario(models.Model):
+    usuario = models.CharField(max_length=100)
+    correo = models.EmailField()
+    fecha_nacimiento = models.DateField()
+    password = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.usuario
