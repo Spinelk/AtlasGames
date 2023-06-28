@@ -18,7 +18,6 @@ python manage.py runserver
 ```
 
 ## Migraciones
-elimina el db.sqlite3
 ```
 python manage.py makemigrations
 python manage.py migrate
