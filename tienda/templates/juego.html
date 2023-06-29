@@ -97,13 +97,13 @@
             id="grupo-cartas"
         >
             {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
-            <div class="col" id="carta">
+            <div class="col">
                 <a
                     href="/juego/{{ videojuego.id }}/"
                     class="text-decoration-none"
                 >
                     <section
-                        class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta"
+                        class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta border-0"
                     >
                         <img
                             src="{{ videojuego.foto_pq.url }}"
