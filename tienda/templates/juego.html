@@ -1,9 +1,9 @@
 {% extends 'layouts/app.html' %} {% block contenido %}
 
 <main class="mt-5">
-    <article class="container-sm my-5">
-        <div class="row row-cols-1 row-cols-lg-2 p-3">
-            <div class="col col-lg-8 col-xl-9">
+    <article class="container-xl my-5">
+        <div class="row row-cols-1 row-cols-md-2 p-lg-3">
+            <div class="col col-md-8">
                 <section
                     class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg"
                 >
@@ -35,7 +35,7 @@
                 </section>
             </div>
 
-            <div class="col col-lg-4 col-xl-3 gy-3 gy-lg-0">
+            <div class="col col-md-4 gy-3 gy-lg-0">
                 <section
                     class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg"
                 >
@@ -80,8 +80,8 @@
         </div>
     </article>
 
-    <article class="container-sm my-5">
-        <div class="row p-3">
+    <article class="container-xl my-5">
+        <div class="row p-lg-3">
             <div class="col">
                 <section
                     class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
@@ -93,7 +93,7 @@
             </div>
         </div>
         <div
-            class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 p-3"
+            class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 p-lg-3"
             id="grupo-cartas"
         >
             {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
