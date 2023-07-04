@@ -18,7 +18,24 @@ class Estudio(models.Model):
 
     def __str__(self):
         return self.nombre
-        
+
+
+
+class PEGI(models.Model):
+    nombre = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre
+
+
+
+class ESBR(models.Model):
+    nombre = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre
+
+
 
 class Videojuego(models.Model):
     nombre = models.CharField(max_length=100)
@@ -29,11 +46,12 @@ class Videojuego(models.Model):
     foto_gd = models.ImageField(upload_to='videojuego/portada/gd')
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
     estudio = models.ForeignKey(Estudio, on_delete=models.CASCADE)
+    esbr = models.ForeignKey(ESBR, on_delete=models.CASCADE)
+    pegi = models.ForeignKey(PEGI, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre
 
-    
 
 @receiver(post_delete, sender=Videojuego)
 def eliminar_imagen(sender, instance, **kwargs):
