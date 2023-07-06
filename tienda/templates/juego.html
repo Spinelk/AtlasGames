@@ -32,7 +32,11 @@
                             <div class="col col-3">
                                 <button
                                     class="btn btn-primary bg-verdeBrillante text-black border-0 rounded-4 fs-2 fw-bold"
-                                    style="width: 100%; aspect-ratio: 4/1; line-height: 100%;"
+                                    style="
+                                        width: 100%;
+                                        aspect-ratio: 4/1;
+                                        line-height: 100%;
+                                    "
                                 >
                                     Comprar
                                 </button>
@@ -48,19 +52,20 @@
                 >
                     <div class="card-body">
                         <p class="card-text fw-bold">Genero:</p>
-                        <p class="card-text">{{ videojuego.genero }}</p>
-
+                        <ul class="card-text">
+                            {% for genero in videojuego.generos.all %}
+                            <li>{{ genero.nombre }}</li>
+                            {% endfor %}
+                        </ul>
 
                         <p class="card-text fw-bold">Estudio:</p>
                         <p class="card-text">{{ videojuego.estudio }}</p>
-
 
                         <p class="card-text fw-bold">Clasificación:</p>
                         <ul class="card-text">
                             <li>ESBR: {{ videojuego.esbr }}</li>
                             <li>PEGI: {{ videojuego.pegi }}</li>
                         </ul>
-
 
                         <p class="card-text fw-bold">Requisitos Minimos:</p>
                         <ul class="card-text">
@@ -70,7 +75,6 @@
                             <li>Procesador</li>
                             <li>Tarjeta Grafica:</li>
                         </ul>
-
 
                         <p class="card-text fw-bold">
                             Requisitos Recomendados:
@@ -107,7 +111,7 @@
             {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
             <div class="col">
                 <a
-                    href="/juego/{{ videojuego.id }}/"
+                    href="/{{ videojuego.id }}/"
                     class="text-decoration-none"
                 >
                     <section
