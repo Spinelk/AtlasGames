@@ -2,80 +2,83 @@
 
 <main class="mt-5">
     <article class="container-xl my-5">
-        <div class="row row-cols-1  p-lg-3">
-            <div class="col col-md-8 col-lg-9">
-                <section
-                    class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg row-cols-1"
+        <div class="row row-cols-1 p-lg-3">
+            <div class="col col-lg-8">
+                <figure
+                    class="card text-white bg-moradoClaro rounded-4 shadow-lg"
                 >
-                    <figure class="col">
-                        <img
-                            src="{{ videojuego.foto_gd.url }}"
-                            class="card-img-top rounded-4 col col-md-6 col-lg-8 shadow-lg object-fit-cover"
-                            alt="Portada de Cyberpunk 2077"
-                        />
-                    </figure>
-                    <div
-                        class="col card-body row row-cols-1 row-cols-lg-2 d-flex"
-                        style="justify-content: center"
-                    >
-                        <div class="col col-lg-8">
-                            <h1 class="card-title fs-1 fw-bold text-capitalize">
-                                {{ videojuego.nombre }}
-                            </h1>
-                            <p class="card-text fs-5 fw-semibold">
-                                {{ videojuego.descripcion }}
-                            </p>
-                        </div>
-                        <div
-                            class="col col-9 col-sm-7 col-lg-4 gy-5 gy-xl-0 d-flex align-items-center"
-                        >
-                            <button
-                                class="btn btn-primary bg-verdeBrillante text-black border-0 rounded-4 fs-2 fw-bold"
-                                style="
-                                    width: 100%;
-                                    aspect-ratio: 4/1;
-                                    line-height: 100%;
-                                "
-                            >
-                                ${{ videojuego.precio }}
-                            </button>
-                        </div>
-                    </div>
-                </section>
+                    <img
+                        src="{{ videojuego.foto_gd.url }}"
+                        class="rounded-4 object-fit-cover"
+                        alt="Portada de Cyberpunk 2077"
+                    />
+                </figure>
             </div>
 
-
-            <div class="col col-md-4 col-lg-3 gy-3 gy-md-0">
+            <div class="col col-lg-4 gy-3 gy-md-0">
                 <section
-                    class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg"
+                    class="card text-white bg-moradoClaro rounded-4 shadow-lg"
                 >
                     <div class="card-body">
-                        <p class="card-text">
-                            <span class="fw-bold">Generos: </span>
-                            {% for genero in videojuego.generos.all %}
-                            {{ genero.nombre }}
-                            {% endfor %}
+                        <h1 class="card-text fs-2 fw-bold text-verdeBrillante">
+                            {{ videojuego.nombre }}
+                        </h1>
+
+                        <p class="card-text fs-6 fw-semibold">
+                            {{ videojuego.descripcion }}
                         </p>
 
-                        <p class="card-text">
-                            <span class="fw-bold">Fecha de Lanzamiento: </span
+                        <p class="card-text fw-semibold">
+                            <span class="fw-bold text-verdeBrillante"
+                                >Generos:
+                            </span>
+                            {% for genero in videojuego.generos.all %} {{
+                            genero.nombre }}, {% endfor %}
+                        </p>
+
+                        <p class="card-text fw-semibold">
+                            <span class="fw-bold text-verdeBrillante"
+                                >Fecha de Lanzamiento: </span
                             >{{ videojuego.estudio }}
                         </p>
 
-                        <p class="card-text">
-                            <span class="fw-bold">Desarrollador: </span>
+                        <p class="card-text fw-semibold">
+                            <span class="fw-bold text-verdeBrillante"
+                                >Desarrollador:
+                            </span>
                             {{ videojuego.estudio }}
                         </p>
 
-                        <p class="card-text">
-                            <span class="fw-bold">Editor: </span>
+                        <p class="card-text fw-semibold">
+                            <span class="fw-bold text-verdeBrillante"
+                                >Editor:
+                            </span>
                             {{ videojuego.estudio }}
                         </p>
 
-                        <p class="card-text">
-                            <span class="fw-bold">Clasificación: </span>
+                        <p class="card-text fw-semibold">
+                            <span class="fw-bold text-verdeBrillante"
+                                >Clasificación:
+                            </span>
                             {{ videojuego.esbr }}
                         </p>
+
+                        <div class="row row-cols-2">
+                            <div class="col col-7">
+                                <div
+                                    class="btn h-100 w-100 bg-verdeBrillante text-moradoOscuro border-0 rounded-4 fs-2 fw-bold"
+                                >
+                                    ${{ videojuego.precio }}
+                                </div>
+                            </div>
+                            <div class="col col-5">
+                                <button
+                                    class="btn h-100 w-100 bg-verdeBrillante text-moradoOscuro border-0 rounded-4 fs-6 fw-bold"
+                                >
+                                    Añadir al carro
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </div>
@@ -88,9 +91,14 @@
                 <section
                     class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
                 >
-                    <h1 class="fs-4 fw-bold">
-                        Mas de {{ videojuego.estudio }}
-                    </h1>
+                    <h2 class="fs-4 fw-bold">
+                        Mas de
+                        <a
+                            href=""
+                            class="text-verdeBrillante text-decoration-none"
+                            >{{ videojuego.estudio }}</a
+                        >
+                    </h2>
                 </section>
             </div>
         </div>

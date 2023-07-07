@@ -30,14 +30,6 @@
 }
 
 
-
-/* article {
-    background-color: red;
-} */
-
-
-
-
 .bg-moradoOscuro {
     --bs-bg-opacity: 1;
     background-color: rgba(
@@ -59,17 +51,18 @@
     ) !important;
 }
 
+
 .text-verdeBrillante {
     --bs-text-opacity: 1;
     color: rgba(var(--verdeBrillante), var(--bs-text-opacity)) !important;
 }
 
-/* .bg-moradoClaro {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--moradoOscuro), var(--bs-bg-opacity)) !important;
+.text-moradoClaro {
+    --bs-text-opacity: 1;
+    color: rgba(var(--moradoClaro), var(--bs-text-opacity)) !important;
 }
 
-.bg-moradoOscuro {
-    --bs-bg-opacity: 1;
-    background-color: rgba(15, 9, 28, var(--bs-bg-opacity)) !important;
-} */
+.text-moradoOscuro {
+    --bs-text-opacity: 1;
+    color: rgba(var(--moradoOscuro), var(--bs-text-opacity)) !important;
+}
