@@ -17,7 +17,7 @@
         >
             {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
             <div class="col">
-                <a href="/{{ videojuego.id }}/" class="text-decoration-none">
+                <a href="/{{ videojuego.slug }}/" class="text-decoration-none">
                     <section
                         class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta border-0"
                     >
@@ -62,7 +62,7 @@
                     {% else %}
                     <div class="carousel-item">
                     {% endif %}
-                        <a href="/{{ videojuego.id }}/">
+                        <a href="/{{ videojuego.slug }}/">
                             <img
                                 src="{{ videojuego.foto_gd.url }}"
                                 class="d-block w-100 ratio ratio-19x9 rounded-4 tamaño-carta"
@@ -116,7 +116,7 @@
         >
             {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
             <div class="col">
-                <a href="/{{ videojuego.id }}/" class="text-decoration-none">
+                <a href="/{{ videojuego.slug }}/" class="text-decoration-none">
                     <section
                         class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta border-0"
                     >
@@ -163,7 +163,7 @@
                     {% for videojuego in videojuegos %} {% if forloop.counter <= 2 %}
                         <div class="col">
                             <a
-                                href="/{{ videojuego.id }}/"
+                                href="/{{ videojuego.slug }}/"
                                 class="text-decoration-none"
                             >
                                 <section

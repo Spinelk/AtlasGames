@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 # Imports para borrar las imagenes si se borra el 'objeto'
 from django.dispatch import receiver
@@ -39,6 +40,7 @@ class ESBR(models.Model):
 
 class Videojuego(models.Model):
     nombre = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True)
     precio = models.IntegerField()
     descripcion = models.TextField()
     foto_pq = models.ImageField(upload_to='videojuego/portada/pq')
@@ -50,6 +52,10 @@ class Videojuego(models.Model):
     esbr = models.ForeignKey(ESBR, on_delete=models.CASCADE)
     pegi = models.ForeignKey(PEGI, on_delete=models.CASCADE)
 
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.nombre)
+        super(Videojuego, self).save(*args, **kwargs)
+        
     def __str__(self):
         return self.nombre
 
