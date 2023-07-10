@@ -45,7 +45,7 @@
                             class="btn fw-bold bg-verdeBrillante text-black btn-sm disabled"
                             type="button"
                         >
-                            {{ username }}
+                            {{ request.user.username }}
                         </button>
                         <a
                             href="{% url 'usuarios:logout' %}"
