@@ -13,9 +13,9 @@ def login_view(request):
             return redirect('tienda:index')
         else:
             error_message = 'Nombre de usuario o contraseña incorrectos'
-            return render(request, 'usuarios/login.html', {'error_message': error_message})
+            return render(request, 'iniciosesion.html', {'error_message': error_message})
     else:
-        return render(request, 'usuarios/login.html')
+        return render(request, 'iniciosesion.html')
 
 def logout_view(request):
     logout(request)
@@ -29,12 +29,12 @@ def register_view(request):
 
         if password != confirm_password:
             error_message = 'Las contraseñas no coinciden'
-            return render(request, 'usuarios/register.html', {'error_message': error_message})
+            return render(request, 'registro.html', {'error_message': error_message})
 
         # Verificar si el nombre de usuario ya está en uso
         if User.objects.filter(username=username).exists():
             error_message = 'El nombre de usuario ya está en uso'
-            return render(request, 'usuarios/register.html', {'error_message': error_message})
+            return render(request, 'registro.html', {'error_message': error_message})
 
         # Crear el nuevo usuario
         user = User.objects.create_user(username=username, password=password)
@@ -43,4 +43,4 @@ def register_view(request):
         login(request, user)
         return redirect('tienda:index')
     else:
-        return render(request, 'usuarios/register.html')
+        return render(request, 'registro.html')

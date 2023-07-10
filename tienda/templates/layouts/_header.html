@@ -37,7 +37,7 @@
 
                 <div>
                     <form class="container-fluid justify-content-start">
-                        <a
+                        <!-- <a
                             href="{% url 'tienda:iniciosesion' %}"
                             class="text-decoration-none"
                         >
@@ -46,14 +46,14 @@
                                 type="button"
                             >
                                 Iniciar Sesion
-                            </button>
+                            </button> -->
                         </a>
-                        <a href="{% url 'tienda:registro' %}" class="text-decoration-none">
+                        <a href="{% url 'usuarios:logout' %}" class="text-decoration-none">
                             <button
-                                class="btn btn-sm btn-outline-secondary"
+                                class="btn fw-bold bg-verdeBrillante text-black btn-sm"
                                 type="button"
                             >
-                                Registrar
+                                Cerrar Sesión
                             </button>
                         </a>
                     </form>
