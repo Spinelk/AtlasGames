@@ -46,7 +46,6 @@ class Videojuego(models.Model):
     foto_pq = models.ImageField(upload_to='videojuego/portada/pq')
     foto_md = models.ImageField(upload_to='videojuego/portada/md')
     foto_gd = models.ImageField(upload_to='videojuego/portada/gd')
-    # genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
     generos = models.ManyToManyField(Genero, blank=False)
     estudio = models.ForeignKey(Estudio, on_delete=models.CASCADE)
     esbr = models.ForeignKey(ESBR, on_delete=models.CASCADE)
