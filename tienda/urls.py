@@ -13,7 +13,4 @@ urlpatterns = [
     path("videojuego/<slug:slug>/", juego, name="registro"),
 
     path("noticias", noticias, name="noticias"),
-
-    path("iniciosesion/", inicio_sesion, name="iniciosesion"),
-    path("registro/", registro, name="registro"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
