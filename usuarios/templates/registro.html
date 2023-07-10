@@ -40,12 +40,20 @@
                 name="confirm_password"
                 required
             /><br /><br />
-            <input class="btn fw-bold bg-verdeBrillante" type="submit" value="Registrarse" />
+            <input
+                class="btn fw-bold bg-verdeBrillante"
+                type="submit"
+                value="Registrarse"
+            />
         </form>
         <br />
         <p>
             ¿Ya tienes una cuenta?
-            <a class="text-decoration-none text-verdeBrillante fw-semibold" href="{% url 'usuarios:login' %}">Inicia sesión</a>
+            <a
+                class="text-decoration-none text-verdeBrillante fw-semibold"
+                href="{% url 'usuarios:login' %}"
+                >Inicia sesión</a
+            >
         </p>
     </div>
 </main>

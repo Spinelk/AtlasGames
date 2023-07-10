@@ -6,30 +6,27 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
+    username = request.user.username
+
     videojuegos = Videojuego.objects.all()
-    return render(request, 'index.html', {'videojuegos': videojuegos})
+    
+    return render(request, 'index.html', {'videojuegos': videojuegos,'username': username})
 
 @login_required
 def juego(request, slug):
+    username = request.user.username
+
     videojuegos = Videojuego.objects.all()
     videojuego = get_object_or_404(Videojuego, slug=slug)
-    return render(request, 'juego.html', {'videojuego': videojuego, 'videojuegos': videojuegos})
+
+    return render(request, 'juego.html', {'videojuego': videojuego, 'videojuegos': videojuegos,'username': username})
 
 
 @login_required
 def noticias(request):
+    username = request.user.username
+
     noticias = Noticia.objects.all()
-    return render(request, 'noticias.html', {'noticias': noticias})
 
-
-
-
-    
-@login_required
-def inicio_sesion(request):
-    return render(request, 'usuarios/inicioSesion.html')
-
-@login_required
-def registro(request):
-    return render(request, 'usuarios/registro.html')
+    return render(request, 'noticias.html', {'noticias': noticias,'username': username})
 
