@@ -44,3 +44,7 @@ def register_view(request):
         return redirect('tienda:index')
     else:
         return render(request, 'registro.html')
+
+
+def error_404_view(request, exception):
+    return render(request, '404.html', status=404)
