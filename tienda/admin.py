@@ -11,3 +11,6 @@ admin.site.register(ESBR)
 
 
 admin.site.register(Noticia)
+
+
+admin.site.register(Compra)

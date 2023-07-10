@@ -19,6 +19,7 @@ def login_view(request):
 
 def logout_view(request):
     request.session.clear()
+
     logout(request)
     return redirect('usuarios:login')
 

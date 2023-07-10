@@ -47,6 +47,43 @@
             {% endif %} {% endfor %}
         </div>
     </article>
+
+    <div
+    name="Carro"
+    class="offcanvas offcanvas-end bg-moradoOscuro text-white"
+    tabindex="-1"
+    id="offcanvasRight"
+    aria-labelledby="offcanvasRightLabel"
+>
+    <div class="offcanvas-header">
+        <h5
+            class="offcanvas-title fw-bold text-verdeBrillante fs-3"
+            id="offcanvasRightLabel"
+        >
+            Carro de Compra
+        </h5>
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+        ></button>
+    </div>
+
+    <div id="carritoProductos" class="offcanvas-body"></div>
+
+    <form action="{% url 'tienda:compra' %}" method="post">
+        {% csrf_token %}
+        <div class="d-grid gap-2 px-5 py-4">
+            <button
+                class="btn btn-primary bg-verdeBrillante text-black border-0 fs-5 fw-bold"
+                type="submit"
+            >
+                Comprar
+            </button>
+        </div>
+    </form>
+</div>
 </main>
 
 {% endblock %}

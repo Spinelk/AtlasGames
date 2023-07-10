@@ -7,6 +7,10 @@ from django.db.models.signals import post_delete
 from django.conf import settings
 import os
 
+
+from django.contrib.auth.models import User
+
+
 class Genero(models.Model):
     nombre = models.CharField(max_length=100)
 
@@ -88,3 +92,8 @@ class Noticia(models.Model):
 
     def __str__(self):
             return self.titulo
+
+
+class Compra(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE)
+    videojuego = models.ForeignKey(Videojuego, on_delete=models.CASCADE)

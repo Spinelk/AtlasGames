@@ -32,8 +32,8 @@
                             <span class="fw-bold text-verdeBrillante"
                                 >Generos:
                             </span>
-                            {% for genero in videojuego.generos.all %}
-                            {{ genero.nombre }}, {% endfor %}
+                            {% for genero in videojuego.generos.all %} {{
+                            genero.nombre }}, {% endfor %}
                         </p>
 
                         <p class="card-text fw-semibold">
@@ -179,14 +179,17 @@
 
         <div id="carritoProductos" class="offcanvas-body"></div>
 
-        <div class="d-grid gap-2 px-5 py-4">
-            <button
-                class="btn btn-primary bg-verdeBrillante text-black border-0 fs-5 fw-bold"
-                type="button"
-            >
-                Comprar
-            </button>
-        </div>
+        <form action="{% url 'tienda:compra' %}" method="post">
+            {% csrf_token %}
+            <div class="d-grid gap-2 px-5 py-4">
+                <button
+                    class="btn btn-primary bg-verdeBrillante text-black border-0 fs-5 fw-bold"
+                    type="submit"
+                >
+                    Comprar
+                </button>
+            </div>
+        </form>
     </div>
 
     <script>
@@ -264,7 +267,7 @@
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-danger" onclick="eliminarDelCarrito('${ producto.slug }')">
+                            <button type="button" class="btn btn-danger" onclick="eliminarDelCarrito('${producto.slug}')">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                 width="25" height="25" fill="currentColor"
                                 class="bi bi-x" viewBox="0 0 16 16">

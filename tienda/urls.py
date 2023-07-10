@@ -14,4 +14,6 @@ urlpatterns = [
 
     path("noticias", noticias, name="noticias"),
     path("biblioteca", biblioteca, name="biblioteca"),
+
+    path('compra/', generar_compra, name='compra'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
