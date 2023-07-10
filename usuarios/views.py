@@ -18,6 +18,7 @@ def login_view(request):
         return render(request, 'iniciosesion.html')
 
 def logout_view(request):
+    request.session.clear()
     logout(request)
     return redirect('usuarios:login')
 
