@@ -6,8 +6,10 @@ from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
+app_name = 'tienda'
+
 urlpatterns = [
-    path("", index, name="index"),
+    path("explora", index, name="index"),
     path("videojuego/<slug:slug>/", juego, name="registro"),
 
     path("noticias", noticias, name="noticias"),

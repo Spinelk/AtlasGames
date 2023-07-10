@@ -6,7 +6,7 @@
         <div class="container-fluid">
             <a
                 class="navbar-brand fw-bold text-verdeBrillante"
-                href="{% url 'index' %}"
+                href="{% url 'tienda:index' %}"
                 >ATLAS GAMES</a
             >
             <button
@@ -25,12 +25,12 @@
                 id="navbarNavAltMarkup"
             >
                 <div class="navbar-nav">
-                    <a class="nav-link fw-semibold" href="{% url 'index' %}"
+                    <a class="nav-link fw-semibold" href="{% url 'tienda:index' %}"
                         >Descubrir</a
                     >
                     <!-- <a class="nav-link fw-semibold" href="#">Explorar</a> -->
 
-                    <a class="nav-link fw-semibold" href="{% url 'noticias' %}"
+                    <a class="nav-link fw-semibold" href="{% url 'tienda:noticias' %}"
                         >Noticias</a
                     >
                 </div>
@@ -38,7 +38,7 @@
                 <div>
                     <form class="container-fluid justify-content-start">
                         <a
-                            href="{% url 'iniciosesion' %}"
+                            href="{% url 'tienda:iniciosesion' %}"
                             class="text-decoration-none"
                         >
                             <button
@@ -48,7 +48,7 @@
                                 Iniciar Sesion
                             </button>
                         </a>
-                        <a href="{% url 'registro' %}" class="text-decoration-none">
+                        <a href="{% url 'tienda:registro' %}" class="text-decoration-none">
                             <button
                                 class="btn btn-sm btn-outline-secondary"
                                 type="button"

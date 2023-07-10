@@ -89,13 +89,3 @@ class Noticia(models.Model):
 
     def __str__(self):
             return self.titulo
-
-
-class Usuario(models.Model):
-    usuario = models.CharField(max_length=100)
-    correo = models.EmailField()
-    fecha_nacimiento = models.DateField()
-    password = models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.usuario
