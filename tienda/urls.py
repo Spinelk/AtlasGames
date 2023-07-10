@@ -11,7 +11,7 @@ urlpatterns = [
     path("noticias", noticias, name="noticias"),
     path("iniciosesion", inicio_sesion, name="iniciosesion"),
     path("registro", registro, name="registro"),
-    path("<slug:slug>/", juego, name="registro"),
+    path("videojuego/<slug:slug>/", juego, name="registro"),
 
     
     # path('admin/dashboard/', admin_dashboard, name='admin_dashboard'),
