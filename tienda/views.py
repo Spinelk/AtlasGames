@@ -24,3 +24,9 @@ def noticias(request):
 
     return render(request, 'noticias.html', {'noticias': noticias})
 
+
+@login_required
+def biblioteca(request):
+    videojuegos = Videojuego.objects.all()
+
+    return render(request, 'biblioteca.html', {'videojuegos': videojuegos})
