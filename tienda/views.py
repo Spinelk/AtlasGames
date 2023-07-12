@@ -104,20 +104,17 @@ def generar_compra(request):
 
 
 def explorar(request):
-    if request.method == 'GET':
-        print("TEST")
-        query = request.GET.get('q')
+    print("TEST")
+    query = request.GET.get('q') or ""
 
-        if query:
-            videojuegos = Videojuego.objects.filter(nombre__icontains=query)
-        else:
-            videojuegos = []
+    if query:
+        videojuegos = Videojuego.objects.filter(nombre__icontains=query)
+    else:
+        videojuegos = []
 
-        context = {
-            'query': query,
-            'videojuegos': videojuegos,
-        }
+    context = {
+        'query': query,
+        'videojuegos': videojuegos,
+    }
 
-        return render(request, 'explorar.html', context)
-
-    return render(request, 'explorar.html')
+    return render(request, 'explorar.html', context)
