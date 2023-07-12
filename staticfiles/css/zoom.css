@@ -1,0 +1,48 @@
+.zoom-card {
+    transition: transform .2s;
+    cursor: pointer;
+}
+.zoom-card:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+
+.zoom-card-md {
+    transition: transform .2s;
+    cursor: pointer;
+}
+.zoom-card-md:hover {
+    transform: scale(1.09);
+    z-index: 1;
+}
+
+
+.zoom-card-sp {
+    transition: transform .2s;
+    cursor: pointer;
+}
+.zoom-card-sp:hover {
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+
+.zoom-card-carrusel {
+    transition: transform .2s;
+    cursor: pointer;
+}
+.zoom-card-carrusel:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
+
+
+.zoom-portada {
+    transition: transform .2s;
+    cursor: pointer;
+}
+.zoom-portada:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
