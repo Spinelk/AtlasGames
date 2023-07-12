@@ -33,7 +33,7 @@
                         </div>
                         <div class="card-footer fw-bold border-0">
                             <small class="text-white fs-6 text-verdeBrillante"
-                                >${{ videojuego.get_precio_formateado }}</small
+                                >{{ videojuego.get_precio_formateado }}</small
                             >
                         </div>
                     </section>
@@ -114,7 +114,7 @@
             class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 py-3"
             id="grupo-cartas"
         >
-            {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
+            {% for videojuego in videojuegos %}
             <div class="col">
                 <a href="/videojuego/{{ videojuego.slug }}/" class="text-decoration-none">
                     <section
@@ -132,13 +132,13 @@
                         </div>
                         <div class="card-footer fw-bold border-0">
                             <small class="text-white fs-6 text-verdeBrillante"
-                                >${{ videojuego.get_precio_formateado }}</small
+                                >{{ videojuego.get_precio_formateado }}</small
                             >
                         </div>
                     </section>
                 </a>
             </div>
-            {% endif %} {% endfor %}
+            {% endfor %}
         </div>
     </article>
 
@@ -197,7 +197,7 @@
                                             >
                                                 <small
                                                     class="text-white fs-3 text-verdeBrillante"
-                                                    >${{ videojuego.get_precio_formateado }}</small
+                                                    >{{ videojuego.get_precio_formateado }}</small
                                                 >
                                             </div>
                                         </div>

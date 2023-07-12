@@ -61,8 +61,11 @@ class Videojuego(models.Model):
         super(Videojuego, self).save(*args, **kwargs)
         
     def get_precio_formateado(self):
+        if (self.precio == 0):
+            return 'Gratis'
+
         precio_formateado = "{:,.0f}".format(self.precio).replace(",", ".")
-        return precio_formateado
+        return '$'+precio_formateado
 
     def __str__(self):
         return self.nombre

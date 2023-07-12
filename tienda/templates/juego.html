@@ -10,7 +10,7 @@
                     <img
                         src="{{ videojuego.foto_gd.url }}"
                         class="rounded-4 object-fit-cover"
-                        alt="Portada de Cyberpunk 2077"
+                        alt="Portada de {{ videojuego.nombre }}"
                     />
                 </figure>
             </div>
@@ -69,7 +69,7 @@
                                     class="btn h-100 w-100 bg-verdeBrillante text-moradoOscuro border-0 rounded-4 fs-2 fw-bold"
                                     style="cursor: default"
                                 >
-                                    ${{ videojuego.get_precio_formateado }}
+                                    {{ videojuego.get_precio_formateado }}
                                 </div>
                             </div>
                             <div class="col col-3">
@@ -145,7 +145,7 @@
                         </div>
                         <div class="card-footer fw-bold border-0">
                             <small class="text-white fs-6 text-verdeBrillante"
-                                >${{ videojuego.get_precio_formateado }}</small
+                                >{{ videojuego.get_precio_formateado }}</small
                             >
                         </div>
                     </section>
