@@ -103,8 +103,9 @@ def generar_compra(request):
         return redirect('tienda:biblioteca')
 
 
-def busqueda(request):
-    if request.method == 'POST':
+def explorar(request):
+    if request.method == 'GET':
+        print("TEST")
         query = request.GET.get('q')
 
         if query:

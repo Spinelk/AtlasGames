@@ -17,6 +17,6 @@ urlpatterns = [
 
     path('compra/', generar_compra, name='compra'),
 
-    path('busqueda/', busqueda, name='busqueda'),
+    path('explorar/', explorar, name='explorar'),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
