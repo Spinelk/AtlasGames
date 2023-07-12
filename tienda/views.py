@@ -36,7 +36,7 @@ def juego(request, slug):
     videojuego = get_object_or_404(Videojuego, slug=slug)
     estudio = videojuego.estudio
     
-    videojuegos = Videojuego.objects.filter(estudio=estudio)
+    videojuegos = Videojuego.objects.filter(estudio=estudio).exclude(slug=slug)
     videojuegos_estudio = list(videojuegos)
     shuffle(videojuegos_estudio)
 

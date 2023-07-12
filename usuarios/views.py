@@ -6,6 +6,9 @@ def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
+
+        username = username.lower()
+
         user = authenticate(username=username, password=password)
 
         if user is not None:
@@ -39,7 +42,7 @@ def register_view(request):
             return render(request, 'registro.html', {'error_message': error_message})
 
         # Crear el nuevo usuario
-        user = User.objects.create_user(username=username, password=password)
+        user = User.objects.create_user(username=username.lower(), password=password)
         user.save()
 
         login(request, user)
