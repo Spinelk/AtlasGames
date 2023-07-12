@@ -1,0 +1,9 @@
+.tamaño-carta {
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.tamaño-carta:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
