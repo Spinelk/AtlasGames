@@ -8,20 +8,44 @@ from django.db import transaction
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from random import shuffle
 import json
 
 @login_required
 def index(request):
     videojuegos = Videojuego.objects.all()
+    videojuegos_todos = list(videojuegos)
+    shuffle(videojuegos_todos)
+
+    videojuegos_gratuitos = list(Videojuego.objects.filter(precio=0))
+    shuffle(videojuegos_gratuitos)
+
+    videojuegos_indie = list(Videojuego.objects.filter(generos__nombre="Indie"))
+    shuffle(videojuegos_indie)
+
+    context = {
+        'videojuegos': videojuegos_todos,
+        'videojuegos_gratuitos': videojuegos_gratuitos,
+        'videojuegos_indie': videojuegos_indie,
+    }
     
-    return render(request, 'index.html', {'videojuegos': videojuegos})
+    return render(request, 'index.html', context)
 
 @login_required
 def juego(request, slug):
-    videojuegos = Videojuego.objects.all()
     videojuego = get_object_or_404(Videojuego, slug=slug)
+    estudio = videojuego.estudio
+    
+    videojuegos = Videojuego.objects.filter(estudio=estudio)
+    videojuegos_estudio = list(videojuegos)
+    shuffle(videojuegos_estudio)
 
-    return render(request, 'juego.html', {'videojuego': videojuego, 'videojuegos': videojuegos})
+    context = {
+        'videojuegos_estudio': videojuegos_estudio,
+        'videojuego': videojuego
+    }
+
+    return render(request, 'juego.html', context)
 
 
 @login_required
@@ -38,24 +62,6 @@ def biblioteca(request):
     compras = Compra.objects.filter(usuario=usuario.id)
 
     return render(request, 'biblioteca.html', {'compras': compras})
-
-
-# @login_required
-# def generar_compra(request):
-#     carrito = request.session.get("carrito", [])
-#     usuario = request.user
-
-#     for producto in carrito:
-#         console.log(producto["slug"])
-#         slug = producto["slug"]
-#         videojuego = Videojuego.objects.get(slug=slug)
-#         compra = Compra(usuario=usuario, videojuego=videojuego)
-#         compra.save()
-
-#     # Limpiar el carrito después de generar la compra
-#     request.session["carrito"] = []
-
-#     return redirect('tienda:biblioteca')
 
 
 @login_required

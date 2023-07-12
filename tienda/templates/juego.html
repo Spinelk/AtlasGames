@@ -104,27 +104,27 @@
     </article>
 
     <article class="container-xl my-5">
-        <div class="row p-lg-3">
+        <div class="row py-3">
             <div class="col">
                 <section
                     class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
                 >
-                    <h2 class="fs-4 fw-bold">
+                    <h1 class="fs-4 fw-bold">
                         Mas de
                         <a
                             href=""
                             class="text-verdeBrillante text-decoration-none"
                             >{{ videojuego.estudio }}</a
                         >
-                    </h2>
+                    </h1>
                 </section>
             </div>
         </div>
         <div
-            class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 py-4 px-lg-3"
+            class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 py-3"
             id="grupo-cartas"
         >
-            {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
+            {% for videojuego in videojuegos_estudio %} {% if forloop.counter <= 6 %}
             <div class="col">
                 <a
                     href="/videojuego/{{ videojuego.slug }}/"

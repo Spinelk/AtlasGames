@@ -45,7 +45,7 @@ class ESBR(models.Model):
 
 class Videojuego(models.Model):
     nombre = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True)
+    slug = models.SlugField(unique=True, blank=True)
     precio = models.IntegerField()
     descripcion = models.TextField()
     foto_pq = models.ImageField(upload_to='videojuego/portada/pq')
@@ -58,7 +58,7 @@ class Videojuego(models.Model):
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.nombre)
-        super(Videojuego, self).save(*args, **kwargs)
+        super().save(*args, **kwargs)
         
     def get_precio_formateado(self):
         if (self.precio == 0):
