@@ -73,7 +73,7 @@
             id="grupo-cartas-2"
         >
             {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
-                {% include 'layouts/videojuego_card_md.html' with videojuego=videojuego %}
+                {% include 'cards/videojuego_card_md.html' with videojuego=videojuego %}
             {% endif %} {% endfor %}
         </div>
     </article>
@@ -163,7 +163,7 @@
             id="grupo-cartas"
         >
             {% for videojuego in videojuegos %}
-                {% include 'layouts/videojuego_card.html' with videojuego=videojuego %}
+                {% include 'cards/videojuego_card.html' with videojuego=videojuego %}
             {% endfor %}
         </div>
     </article>

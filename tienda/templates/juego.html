@@ -126,7 +126,7 @@
             id="grupo-cartas"
         >
             {% for videojuego in videojuegos_estudio %} {% if forloop.counter <= 6 %}
-                {% include 'layouts/videojuego_card.html' with videojuego=videojuego %}
+                {% include 'cards/videojuego_card.html' with videojuego=videojuego %}
             {% endif %} {% endfor %}
         </div>
     </article>

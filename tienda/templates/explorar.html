@@ -50,7 +50,7 @@
             id="grupo-cartas"
         >
             {% for videojuego in videojuegos %}
-                {% include 'layouts/videojuego_card.html' with videojuego=videojuego %}
+                {% include 'cards/videojuego_card.html' with videojuego=videojuego %}
             {% endfor %}
         </div>
         {% else %}
