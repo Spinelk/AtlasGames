@@ -1,15 +1,14 @@
-function validarUsuario(params) { 
+function validarUsuario(params) {
     var usuario = params.value;
 
     if (usuario.length > 0) {
-      if (usuario.lenght > 2){
-        $("#0").removeClass("text-danger").addClass("text-success");
-        $("#usuario").removeClass("is-invalid").addClass("is-valid");
-      }
-      else {
-        $("#0").removeClass("text-success").addClass("text-danger");
-        $("#usuario").removeClass("is-valid").addClass("is-invalid");
-      }
+        if (usuario.lenght > 2) {
+            $("#0").removeClass("text-danger").addClass("text-success");
+            $("#usuario").removeClass("is-invalid").addClass("is-valid");
+        } else {
+            $("#0").removeClass("text-success").addClass("text-danger");
+            $("#usuario").removeClass("is-valid").addClass("is-invalid");
+        }
     }
 }
 

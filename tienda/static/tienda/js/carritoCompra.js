@@ -1,4 +1,6 @@
 function agregarAlCarrito(nombre, foto, precio, slug) {
+    console.log("TEST")
+
     // Crear un objeto que representa el producto
     var producto = {
         nombre: nombre,
