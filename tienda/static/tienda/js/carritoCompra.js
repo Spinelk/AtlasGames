@@ -147,7 +147,7 @@ function enviarCarrito() {
     // Enviar los datos del carrito al servidor mediante una solicitud AJAX
     $.ajax({
         type: "POST",
-        url: "/guardar_carrito_en_servidor/", // URL de la vista en Django para guardar el carrito en el servidor
+        url: "/compra/", // URL de la vista en Django para guardar el carrito en el servidor
         data: { carrito: JSON.stringify(carrito) },
         success: function (response) {
             // Manejar la respuesta del servidor si es necesario

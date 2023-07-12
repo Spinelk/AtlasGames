@@ -86,7 +86,7 @@ def generar_compra(request):
 
 
 @csrf_exempt
-def guardar_carrito_en_servidor(request):
+def generar_compra(request):
     if request.method == 'POST':
         carrito_str = request.POST.get('carrito', '[]')
         carrito = json.loads(carrito_str)
@@ -101,3 +101,19 @@ def guardar_carrito_en_servidor(request):
     
         messages.success(request, "La compra se generó con éxito.")
         return redirect('tienda:biblioteca')
+
+
+def busqueda(request):
+    query = request.GET.get('q')
+
+    if query:
+        videojuegos = Videojuego.objects.filter(nombre__icontains=query)
+    else:
+        videojuegos = []
+
+    context = {
+        'query': query,
+        'videojuegos': videojuegos,
+    }
+
+    return render(request, 'explorar.html', context)

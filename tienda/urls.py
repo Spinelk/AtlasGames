@@ -17,5 +17,6 @@ urlpatterns = [
 
     path('compra/', generar_compra, name='compra'),
 
-    path('guardar_carrito_en_servidor/', guardar_carrito_en_servidor, name='guardar_carrito_en_servidor'),
+    path('busqueda/', busqueda, name='busqueda'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,122 @@
+{% extends 'layouts/app.html' %} {% block contenido %}
+
+<main class="mt-5">
+    <article class="container-xl my-5">
+        <div class="row py-3">
+            <div class="col">
+                <section
+                    class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
+                >
+                    <form
+                        class=""
+                        method="GET"
+                        action="{% url 'tienda:busqueda' %}"
+                    >
+                        <div class="input-group mb-3">
+                            <input
+                                type="text"
+                                name="q"
+                                class="form-control bg-moradoOscuro border-0 text-white"
+                            />
+                            <button
+                                class="btn text-black bg-verdeBrillante"
+                                type="submit"
+                                value="Buscar"
+                            >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-search"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                    <h1 class="fs-4 fw-bold">
+                        Resultados de búsqueda para "<span class="text-verdeBrillante">{{ query }}</span>"
+                    </h1>
+                </section>
+            </div>
+        </div>
+        {% if videojuegos %}
+        <div
+            class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 py-3"
+            id="grupo-cartas"
+        >
+            {% for videojuego in videojuegos %}
+            <div class="col">
+                <a
+                    href="/videojuego/{{ videojuego.slug }}/"
+                    class="text-decoration-none"
+                >
+                    <section
+                        class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta border-0"
+                    >
+                        <img
+                            src="{{ videojuego.foto_pq.url }}"
+                            class="card-img-top rounded-4 shadow-lg"
+                            alt="..."
+                        />
+                        <div class="card-body">
+                            <h3 class="card-title fs-5 fw-bold">
+                                {{ videojuego.nombre }}
+                            </h3>
+                        </div>
+                        <div class="card-footer fw-bold border-0">
+                            <small class="text-white fs-6 text-verdeBrillante"
+                                >{{ videojuego.get_precio_formateado }}</small
+                            >
+                        </div>
+                    </section>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <h2 class="fs-4 fw-bold">No se encontraron resultados.</h2>
+        {% endif %}
+    </article>
+
+    <div
+        name="Carro"
+        class="offcanvas offcanvas-end bg-moradoOscuro text-white"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+    >
+        <div class="offcanvas-header">
+            <h5
+                class="offcanvas-title fw-bold text-verdeBrillante fs-3"
+                id="offcanvasRightLabel"
+            >
+                Carro de Compra
+            </h5>
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+            ></button>
+        </div>
+
+        <div id="carritoProductos" class="offcanvas-body"></div>
+
+        <div class="d-grid gap-2 px-5 py-4">
+            <button
+                class="btn btn-primary bg-verdeBrillante text-black border-0 fs-5 fw-bold"
+                type="submit"
+                onclick="enviarCarrito()"
+            >
+                Comprar
+            </button>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
