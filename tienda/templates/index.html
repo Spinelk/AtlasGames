@@ -15,7 +15,7 @@
             class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 py-3"
             id="grupo-cartas-2"
         >
-            {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
+            {% for videojuego in videojuegos %}
             <div class="col">
                 <a href="/videojuego/{{ videojuego.slug }}/" class="text-decoration-none">
                     <section
@@ -39,7 +39,7 @@
                     </section>
                 </a>
             </div>
-            {% endif %} {% endfor %}
+            {% endfor %}
         </div>
     </article>
 
