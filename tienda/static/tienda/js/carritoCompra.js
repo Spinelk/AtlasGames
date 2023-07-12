@@ -39,7 +39,8 @@ function agregarAlCarrito(nombre, foto, precio, slug) {
 
 function mostrarProductosEnCarrito() {
     // Obtener el contenedor donde se mostrarán los productos
-    var carritoProductos = document.getElementById("carritoProductos");
+    var carritoProductos = $("#carritoProductos")[0]; // jQuery
+
 
     // Limpiar el contenido actual del contenedor
     carritoProductos.innerHTML = "";
