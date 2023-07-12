@@ -13,7 +13,7 @@ cd AtlasGames
 
 pip install -r requerimientos.txt
 
-python manage.py runserver --insecure
+python manage.py runserver
 
 ```
 
@@ -24,9 +24,9 @@ python manage.py migrate
 ```
 
 ## RUN
-Servidor inseguro
+Servidor normal
 ```
-python manage.py runserver --insecure
+python manage.py runserver
 ```
 
 
