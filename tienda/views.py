@@ -99,7 +99,6 @@ def generar_compra(request):
             compra = Compra(usuario=usuario, videojuego=videojuego)
             compra.save()
     
-        messages.success(request, "La compra se generó con éxito.")
         return redirect('tienda:biblioteca')
 
 
