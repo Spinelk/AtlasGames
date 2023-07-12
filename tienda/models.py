@@ -60,6 +60,10 @@ class Videojuego(models.Model):
         self.slug = slugify(self.nombre)
         super(Videojuego, self).save(*args, **kwargs)
         
+    def get_precio_formateado(self):
+        precio_formateado = "{:,.0f}".format(self.precio).replace(",", ".")
+        return precio_formateado
+
     def __str__(self):
         return self.nombre
 
