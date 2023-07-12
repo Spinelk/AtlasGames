@@ -16,22 +16,7 @@
             id="grupo-cartas"
         >
             {% for compra in compras %}
-            <div class="col">
-                <section
-                    class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta border-0"
-                >
-                    <img
-                        src="{{ compra.videojuego.foto_pq.url }}"
-                        class="card-img-top rounded-4 shadow-lg"
-                        alt="..."
-                    />
-                    <div class="card-body">
-                        <h3 class="card-title fs-5 fw-bold">
-                            {{ compra.videojuego.nombre }}
-                        </h3>
-                    </div>
-                </section>
-            </div>
+                {% include 'layouts/videojuego_biblioteca.html' with compra=compra %}
             {% endfor %}
         </div>
     </article>

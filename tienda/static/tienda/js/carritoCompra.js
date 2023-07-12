@@ -137,7 +137,7 @@ function compraExitosa() {
 }
 
 function compraFallida() {
-    alert("Error al realizar la compra");
+    alert("Error al realizar la compra. No puedes comprar un videojuego que ya posees");
     return;
 }
 

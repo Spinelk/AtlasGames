@@ -103,6 +103,7 @@
         </div>
     </article>
 
+    {% if videojuegos_estudio %}
     <article class="container-xl my-5">
         <div class="row py-3">
             <div class="col">
@@ -125,35 +126,11 @@
             id="grupo-cartas"
         >
             {% for videojuego in videojuegos_estudio %} {% if forloop.counter <= 6 %}
-            <div class="col">
-                <a
-                    href="/videojuego/{{ videojuego.slug }}/"
-                    class="text-decoration-none"
-                >
-                    <section
-                        class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg tamaño-carta border-0"
-                    >
-                        <img
-                            src="{{ videojuego.foto_pq.url }}"
-                            class="card-img-top rounded-4 shadow-lg"
-                            alt="..."
-                        />
-                        <div class="card-body">
-                            <h3 class="card-title fs-5 fw-bold">
-                                {{ videojuego.nombre }}
-                            </h3>
-                        </div>
-                        <div class="card-footer fw-bold border-0">
-                            <small class="text-white fs-6 text-verdeBrillante"
-                                >{{ videojuego.get_precio_formateado }}</small
-                            >
-                        </div>
-                    </section>
-                </a>
-            </div>
+                {% include 'layouts/videojuego_card.html' with videojuego=videojuego %}
             {% endif %} {% endfor %}
         </div>
     </article>
+    {% endif %}
 
     <div
         name="Carro"
