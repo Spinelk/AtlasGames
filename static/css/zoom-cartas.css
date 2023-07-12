@@ -26,3 +26,13 @@
     transform: scale(1.05);
     z-index: 1;
 }
+
+
+.zoom-card-carrusel {
+    transition: transform .2s;
+    cursor: pointer;
+}
+.zoom-card-carrusel:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
