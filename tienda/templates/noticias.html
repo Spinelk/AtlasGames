@@ -72,17 +72,15 @@
 
     <div id="carritoProductos" class="offcanvas-body"></div>
 
-    <form action="{% url 'tienda:compra' %}" method="post">
-        {% csrf_token %}
-        <div class="d-grid gap-2 px-5 py-4">
-            <button
-                class="btn btn-primary bg-verdeBrillante text-black border-0 fs-5 fw-bold"
-                type="submit"
-            >
-                Comprar
-            </button>
-        </div>
-    </form>
+    <div class="d-grid gap-2 px-5 py-4">
+        <button
+            class="btn btn-primary bg-verdeBrillante text-black border-0 fs-5 fw-bold"
+            type="submit"
+            onclick="enviarCarrito()"
+        >
+            Comprar
+        </button>
+    </div>
 </div>
 </main>
 

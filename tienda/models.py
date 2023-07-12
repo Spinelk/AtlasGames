@@ -9,6 +9,7 @@ import os
 
 
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 class Genero(models.Model):
@@ -97,3 +98,10 @@ class Noticia(models.Model):
 class Compra(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE)
     videojuego = models.ForeignKey(Videojuego, on_delete=models.CASCADE)
+    fecha_compra = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        unique_together = ['usuario', 'videojuego']
+
+    def __str__(self):
+        return f"{self.usuario}: {self.videojuego}"

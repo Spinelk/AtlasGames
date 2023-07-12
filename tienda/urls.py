@@ -16,4 +16,6 @@ urlpatterns = [
     path("biblioteca", biblioteca, name="biblioteca"),
 
     path('compra/', generar_compra, name='compra'),
+
+    path('guardar_carrito_en_servidor/', guardar_carrito_en_servidor, name='guardar_carrito_en_servidor'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

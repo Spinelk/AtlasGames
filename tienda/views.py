@@ -6,7 +6,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import transaction
 from django.contrib import messages
-
+from django.views.decorators.csrf import csrf_exempt
+from django.http import JsonResponse
+import json
 
 @login_required
 def index(request):
@@ -73,6 +75,23 @@ def generar_compra(request):
     # Limpiar el carrito después de generar la compra
     request.session["carrito"] = []
 
-    messages.success(request, "La compra se generó con éxito.")
 
     return redirect('tienda:biblioteca')
+
+
+@csrf_exempt
+def guardar_carrito_en_servidor(request):
+    if request.method == 'POST':
+        carrito_str = request.POST.get('carrito', '[]')
+        carrito = json.loads(carrito_str)
+
+        usuario = request.user
+
+        for producto in carrito:
+            slug = producto['slug']
+            videojuego = Videojuego.objects.get(slug=slug)
+            compra = Compra(usuario=usuario, videojuego=videojuego)
+            compra.save()
+    
+        messages.success(request, "La compra se generó con éxito.")
+        return redirect('tienda:biblioteca')
