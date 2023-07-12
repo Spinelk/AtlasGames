@@ -5,24 +5,24 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href="{% static 'tienda/css/zoom-cartas.css' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'css/zoom-cartas.css' %}">
         <title>Atlas Games</title>
 
         <!-- Referencia a Bootstrap 5 -->
         <link
-            href="{% static 'tienda/css/bootstrap.css' %}"
+            href="{% static 'css/bootstrap.css' %}"
             rel="stylesheet"
         />
         <!-- Referencia a jQuery -->
-        <script src="{% static 'tienda/js/jquery.js' %}"></script>
+        <script src="{% static 'js/jquery.js' %}"></script>
         <!-- Referencia a CSS -->
-        <link rel="stylesheet" href="{% static 'tienda/css/colores.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/colores.css' %}" />
         <link
             rel="stylesheet"
-            href="{% static 'tienda/css/zoom-cartas.css' %}"
+            href="{% static 'css/zoom-cartas.css' %}"
         />
 
-        <link rel="icon" type="image/x-icon" href="{% static 'tienda/icono.png' %}">
+        <link rel="icon" type="image/x-icon" href="{% static 'icono.png' %}">
     </head>
 
     <body class="text-white bg-moradoOscuro">
@@ -32,11 +32,11 @@
         {% block app %} {% endblock %}
         
         <script
-            src="{% static 'tienda/js/bootstrap.bundle.js' %}"
+            src="{% static 'js/bootstrap.bundle.js' %}"
         ></script>
 
-        <script src="{% static 'tienda/js/carritoCompra.js' %}"></script>
+        <script src="{% static 'js/carritoCompra.js' %}"></script>
 
-        <script src="{% static 'tienda/js/validadorRegistro.js' %}"></script>
+        <script src="{% static 'js/validadorRegistro.js' %}"></script>
     </body>
 </html>
