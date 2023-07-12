@@ -36,3 +36,13 @@
     transform: scale(1.2);
     z-index: 1;
 }
+
+
+.zoom-portada {
+    transition: transform .2s;
+    cursor: pointer;
+}
+.zoom-portada:hover {
+    transform: scale(1.2);
+    z-index: 1;
+}
