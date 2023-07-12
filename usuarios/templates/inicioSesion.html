@@ -12,13 +12,18 @@
         <form method="post">
             {% csrf_token %}
             <label class="fw-semibold text-verdeBrillante" for="username">Nombre de usuario:</label>
-            <input class="form-control" type="text" name="username" required /><br /><br />
+            <input class="form-control bg-moradoOscuro text-white fw-semibold border-0" type="text" name="username" required />
+            <br />
+            
             <label class="fw-semibold text-verdeBrillante" for="password">Contraseña:</label>
-            <input class="form-control" type="password" name="password" required /><br /><br />
+            <input class="form-control bg-moradoOscuro text-white fw-semibold border-0" type="password" name="password" required />
+            <br />
+
+
             <input class="btn fw-bold bg-verdeBrillante" type="submit" value="Iniciar sesión" />
         </form>
         <br />
-        <p>
+        <p class="fw-semibold">
             ¿No tienes una cuenta?
             <a class="text-decoration-none text-verdeBrillante fw-semibold" href="{% url 'usuarios:registro' %}">Regístrate</a>
         </p>
