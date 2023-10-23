@@ -1,6 +1,4 @@
 function agregarAlCarrito(nombre, foto, precio, slug) {
-    console.log("TEST")
-
     // Crear un objeto que representa el producto
     var producto = {
         nombre: nombre,
@@ -34,13 +32,14 @@ function agregarAlCarrito(nombre, foto, precio, slug) {
 
     // Fuerza una actualización del carrito
     mostrarProductosEnCarrito();
-}
 
+    // Mostrar un mensaje de éxito
+    alert("Producto agregado al carrito.");
+}
 
 function mostrarProductosEnCarrito() {
     // Obtener el contenedor donde se mostrarán los productos
     var carritoProductos = $("#carritoProductos")[0]; // jQuery
-
 
     // Limpiar el contenido actual del contenedor
     carritoProductos.innerHTML = "";
@@ -68,7 +67,7 @@ function mostrarProductosEnCarrito() {
                 <div class="col-md-7">
                     <div class="card-body">
                         <h5 class="card-title fw-bold fs-4">${producto.nombre}</h5>
-                        <p class="card-text fw-semibold fs-4"><small class="text-body-secondary text-verdeBrillante">$${producto.precio}</small></p>
+                        <p class="card-text fw-semibold fs-4"><small class="text-body-secondary text-verdeBrillante">${producto.precio}</small></p>
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -118,10 +117,12 @@ function eliminarDelCarrito(slug) {
         // Actualizar la interfaz de usuario (opcional)
         mostrarProductosEnCarrito();
     }
+
+    // Mostrar un mensaje de éxito
+    alert("Producto eliminado del carrito.");
 }
 
 document.addEventListener("DOMContentLoaded", mostrarProductosEnCarrito);
-
 
 function obtenerCarritoDesdeLocalStorage() {
     var carrito = localStorage.getItem("carrito");
@@ -137,7 +138,9 @@ function compraExitosa() {
 }
 
 function compraFallida() {
-    alert("Error al realizar la compra. No puedes comprar un videojuego que ya posees");
+    alert(
+        "Error al realizar la compra. No puedes comprar un videojuego que ya posees"
+    );
     return;
 }
 
@@ -155,9 +158,9 @@ function enviarCarrito() {
             mostrarProductosEnCarrito();
             compraExitosa();
         },
-        error: function() {
+        error: function () {
             // Manejar el error de la solicitud AJAX
             compraFallida();
-        }
+        },
     });
 }
