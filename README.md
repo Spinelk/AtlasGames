@@ -1,20 +1,20 @@
 # Atlas Games
 # Proyecto Semestral de Programación Web
 
-## Instalación
+## Requisitos
+- Python 3.10^
+
+## Instalación Windows
 ```
 git clone https://github.com/Spinelk/AtlasGames
 
-python -m venv myvenv
-
-.\myvenv\Scripts\activate
-
 cd AtlasGames
 
+python -m venv venv
+
+.\venv\Scripts\activate
+
 pip install -r requerimientos.txt
-
-python manage.py runserver
-
 ```
 
 ## Migraciones
