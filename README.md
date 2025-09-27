@@ -1,21 +1,40 @@
-# Atlas Games
-# Proyecto Semestral de Programación Web
+# Atlas Games - Tienda WEB
+# Proyecto Semestral de Programación Web - Revision 2052
 
-## Requisitos
-- Python 3.10^
+<br>
+<br>
 
-## Instalación Windows
+## INSTRUCCIONES DE INSTALACIÓN PROVISIONALES
+
+
+## Teteado en Podman
+- Fedora 37 / Python 3.11.6
+
+## Creacion de podman con toolbx en fedora
 ```
+toolbox create <name> -r 37
+
+```
+
+<br>
+
+## Instalación
+```
+toolbox enter <name>
+
+sudo dnf install python3-pip
+
 git clone https://github.com/Spinelk/AtlasGames
 
 cd AtlasGames
 
-python -m venv venv
-
-.\venv\Scripts\activate
-
 pip install -r requerimientos.txt
 ```
+
+<br>
+<br>
+
+# Instrucciones de uso 
 
 ## Migraciones
 ```
@@ -29,6 +48,10 @@ Servidor normal
 python manage.py runserver
 ```
 
+Servidor dentro de podman. El puerto por defecto puede estar ocupado, se debe elegir uno disponible
+```
+python manage.py runserver 0.0.0.0:5000
+```
 
 Servidor en red lan
 ```
