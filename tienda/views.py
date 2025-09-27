@@ -1,15 +1,18 @@
+# Django
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
+
+# Modulos Python
+from random import shuffle
+import json
+
+# Modelos
 from tienda.models import Videojuego
 from tienda.models import Noticia
 from tienda.models import Compra
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import User
-from django.db import transaction
-from django.contrib import messages
-from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse
-from random import shuffle
-import json
+
 
 @login_required
 def index(request):
@@ -36,8 +39,7 @@ def juego(request, slug):
     videojuego = get_object_or_404(Videojuego, slug=slug)
     estudio = videojuego.estudio
     
-    videojuegos = Videojuego.objects.filter(estudio=estudio).exclude(slug=slug)
-    videojuegos_estudio = list(videojuegos)
+    videojuegos_estudio = list(Videojuego.objects.filter(estudio=estudio).exclude(slug=slug))
     shuffle(videojuegos_estudio)
 
     context = {
@@ -64,42 +66,23 @@ def biblioteca(request):
     return render(request, 'biblioteca.html', {'compras': compras})
 
 
+@csrf_exempt # Esto no deberia ser necesario
 @login_required
+@login_required
+@require_POST 
 def generar_compra(request):
-    carrito = request.session.get("carrito", [])
+    carrito_str = request.POST.get('carrito', '[]')
+    carrito = json.loads(carrito_str)
+
     usuario = request.user
 
-    print("test 1")
     for producto in carrito:
-        print("test 2")
-        slug = producto["slug"]
+        slug = producto['slug']
         videojuego = Videojuego.objects.get(slug=slug)
         compra = Compra(usuario=usuario, videojuego=videojuego)
         compra.save()
-    print("test 3")
-    
-    # Limpiar el carrito después de generar la compra
-    request.session["carrito"] = []
-
 
     return redirect('tienda:biblioteca')
-
-
-@csrf_exempt
-def generar_compra(request):
-    if request.method == 'POST':
-        carrito_str = request.POST.get('carrito', '[]')
-        carrito = json.loads(carrito_str)
-
-        usuario = request.user
-
-        for producto in carrito:
-            slug = producto['slug']
-            videojuego = Videojuego.objects.get(slug=slug)
-            compra = Compra(usuario=usuario, videojuego=videojuego)
-            compra.save()
-    
-        return redirect('tienda:biblioteca')
 
 
 def explorar(request):
