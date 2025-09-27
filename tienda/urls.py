@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import *
+from tienda.views import index, juego, noticias, biblioteca, generar_compra, explorar
 
 
 #Esto junto con la linea despues de 'urlpatterns' funcionan para cargar las imagenes en el html
