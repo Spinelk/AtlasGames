@@ -16,9 +16,9 @@ def login_view(request):
             return redirect('tienda:index')
         else:
             error_message = 'Nombre de usuario o contraseña incorrectos'
-            return render(request, 'iniciosesion.html', {'error_message': error_message})
+            return render(request, 'inicioSesion.html', {'error_message': error_message})
     else:
-        return render(request, 'iniciosesion.html')
+        return render(request, 'inicioSesion.html')
 
 def logout_view(request):
     request.session.clear()
