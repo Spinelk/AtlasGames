@@ -26,24 +26,24 @@
             >
                 <div class="navbar-nav">
                     <a
-                        class="nav-link fw-semibold"
+                        class="nav-link fw-semibold text-white"
                         href="{% url 'tienda:index' %}"
                         >Descubrir</a
                     >
                     <a
-                        class="nav-link fw-semibold"
+                        class="nav-link fw-semibold text-white"
                         href="{% url 'tienda:biblioteca' %}"
                         >Biblioteca</a
                     >
 
                     <a
-                        class="nav-link fw-semibold"
+                        class="nav-link fw-semibold text-white"
                         href="{% url 'tienda:explorar' %}"
                         >Explorar</a
                     >
                     
                     <a
-                        class="nav-link fw-semibold"
+                        class="nav-link fw-semibold text-white"
                         href="{% url 'tienda:noticias' %}"
                         >Noticias</a
                     >
@@ -94,10 +94,10 @@
                                 </svg>
                                 {{ request.user.username }}
                             </button>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-end bg-verdeBrillante">
                                 <li>
                                     <a
-                                        class="dropdown-item fw-bold text-decoration-none"
+                                        class="dropdown-item fw-bold text-decoration-none text-black"
                                         href="{% url 'usuarios:logout' %}"
                                         >Cerrar Sesion</a
                                     >

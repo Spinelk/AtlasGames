@@ -1,68 +1,56 @@
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 0px) {
-}
+@media (min-width: 0px) {}
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-}
+@media (min-width: 576px) {}
 
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-}
+@media (min-width: 992px) {}
 
 /* X-Large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}
 
 /* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) {
-}
+@media (min-width: 1400px) {}
 
 :root {
-    --moradoClaro: 42, 31, 73; /* #2a1f49; */
-    --moradoOscuro: 32, 25, 48; /* #201930; */
-    --verdeBrillante: 191, 255, 0; /* #bfff00; */
+    --moradoClaro: #2a1f49;
+    --moradoOscuro: #14101f;
+    --verdeBrillante: #bfff00;
     --gris: #a6a6a6;
 }
 
 
 .bg-moradoOscuro {
     --bs-bg-opacity: 1;
-    background-color: rgba(
-        var(--moradoOscuro),
-        var(--bs-bg-opacity)
-    ) !important;
+    background-color: var(--moradoOscuro, 1) !important;
 }
 
 .bg-moradoClaro {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--moradoClaro), var(--bs-bg-opacity)) !important;
+    background-color: var(--moradoClaro, 1) !important;
 }
 
 .bg-verdeBrillante {
     --bs-text-opacity: 1;
-    background-color: rgba(
-        var(--verdeBrillante),
-        var(--bs-text-opacity)
-    ) !important;
+    background-color: var(--verdeBrillante, 1) !important;
 }
 
 
 .text-verdeBrillante {
     --bs-text-opacity: 1;
-    color: rgba(var(--verdeBrillante), var(--bs-text-opacity)) !important;
+    color: var(--verdeBrillante, 1) !important;
 }
 
 .text-moradoClaro {
     --bs-text-opacity: 1;
-    color: rgba(var(--moradoClaro), var(--bs-text-opacity)) !important;
+    color: var(--moradoClaro, 1) !important;
 }
 
 .text-moradoOscuro {
     --bs-text-opacity: 1;
-    color: rgba(var(--moradoOscuro), var(--bs-text-opacity)) !important;
+    color: var(--moradoOscuro, 1) !important;
 }

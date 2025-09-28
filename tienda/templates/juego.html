@@ -1,133 +1,134 @@
 {% extends 'layouts/app.html' %} {% block contenido %}
 
 <main class="mt-5">
-    <article class="container-xl my-5">
-        <div class="row row-cols-1 p-lg-3">
-            <div class="col col-lg-8">
-                <figure
-                    class="card text-white bg-moradoClaro rounded-4 shadow-lg"
-                >
-                    <img
-                        src="{{ videojuego.foto_gd.url }}"
-                        class="rounded-4 object-fit-cover zoom-portada"
-                        alt="Portada de {{ videojuego.nombre }}"
-                    />
-                </figure>
-            </div>
+    <article class="container-xl my-5 p-0">
+        <div class="row row-cols-1">
+            <div class="col-lg-8">
+                <div class="bg-moradoClaro rounded-3">
+                    
+                    <div class="ratio ratio-16x9">
+                        <img
+                            src="{{ videojuego.foto_gd.url }}"
+                            class="rounded-3 object-fit-cover w-100"
+                            alt="Portada de {{ videojuego.nombre }}"
+                        />
+                    </div>
 
-            <div class="col col-lg-4 gy-3 gy-md-0">
-                <section
-                    class="card text-white bg-moradoClaro rounded-4 shadow-lg"
-                >
-                    <div class="card-body">
-                        <h1 class="card-text fs-2 fw-bold text-verdeBrillante">
-                            {{ videojuego.nombre }}
-                        </h1>
-
+                    <div class="p-3">
                         <p class="card-text fs-6 fw-semibold">
                             {{ videojuego.descripcion }}
                         </p>
+                    </div>
+                </div>
+            </div>
 
-                        <p class="card-text fw-semibold">
-                            <span class="fw-bold text-verdeBrillante"
-                                >Generos:
-                            </span>
+
+            <div class="col-lg-4">
+                <section
+                    class="text-white bg-moradoClaro rounded-3 p-3 fw-bold"
+                >
+                    <h1 class="fs-2 my-auto fw-bolder">
+                        {{ videojuego.nombre }}
+                    </h1>
+
+                    <hr class="text-white">
+
+                    <p>
+                        Generos:
+                        <span class="text-verdeBrillante fw-medium">
                             {% for genero in videojuego.generos.all %}
-                            {{ genero.nombre }}, {% endfor %}
-                        </p>
+                                {{ genero.nombre }}
+                                {% if not forloop.last %} - {% endif %}
+                            {% endfor %}
+                        </span>
+                    </p>
 
-                        <p class="card-text fw-semibold">
-                            <span class="fw-bold text-verdeBrillante"
-                                >Fecha de Lanzamiento: </span
-                            >{{ videojuego.estudio }}
-                        </p>
-
-                        <p class="card-text fw-semibold">
-                            <span class="fw-bold text-verdeBrillante"
-                                >Desarrollador:
-                            </span>
+                    <p>
+                        Fecha de Lanzamiento:
+                        <span class="text-verdeBrillante fw-medium">
                             {{ videojuego.estudio }}
-                        </p>
+                        </span>
+                    </p>
 
-                        <p class="card-text fw-semibold">
-                            <span class="fw-bold text-verdeBrillante"
-                                >Editor:
-                            </span>
+                    <p>
+                        Desarrollador:
+                        <span class="text-verdeBrillante fw-medium">
                             {{ videojuego.estudio }}
-                        </p>
+                        </span>
+                    </p>
 
-                        <p class="card-text fw-semibold">
-                            <span class="fw-bold text-verdeBrillante"
-                                >Clasificación:
-                            </span>
+
+                    <p>
+                        Editor:
+                        <span class="text-verdeBrillante fw-medium">
+                            {{ videojuego.estudio }}
+                        </span>
+                    </p>
+
+
+                    <p>
+                        Clasificación:
+                        <span class="text-verdeBrillante fw-medium">
                             {{ videojuego.esbr }}
-                        </p>
+                        </span>
+                    </p>
+                </section>
 
-                        <div class="row row-cols-2">
-                            <div class="col col-9">
-                                <div
-                                    class="btn h-100 w-100 bg-verdeBrillante text-moradoOscuro border-0 rounded-4 fs-2 fw-bold"
-                                    style="cursor: default"
-                                >
-                                    {{ videojuego.get_precio_formateado }}
-                                </div>
-                            </div>
-                            <div class="col col-3">
-                                <button
-                                    class="btn h-100 w-100 bg-verdeBrillante border-0 rounded-4 fs-6 fw-bold"
-                                    data-nombre="{{ videojuego.nombre }}"
-                                    data-foto_pq="{{ videojuego.foto_pq.url }}"
-                                    data-precio="{{ videojuego.get_precio_formateado }}"
-                                    data-slug="{{ videojuego.slug }}"
-                                    onclick="agregarAlCarrito(this.dataset.nombre, this.dataset.foto_pq, this.dataset.precio, this.dataset.slug)"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="30"
-                                        height="30"
-                                        fill="currentColor"
-                                        class="bi bi-bag-plus-fill"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path
-                                            fill-rule="evenodd"
-                                            d="M10.5 3.5a2.5 2.5 0 0 0-5 0V4h5v-.5zm1 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zM8.5 8a.5.5 0 0 0-1 0v1.5H6a.5.5 0 0 0 0 1h1.5V12a.5.5 0 0 0 1 0v-1.5H10a.5.5 0 0 0 0-1H8.5V8z"
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
+                <br>
+
+                <section
+                    class="text-white bg-moradoClaro rounded-3 p-3"
+                >
+
+                    <div>
+                        <div
+                            class="fs-2 fw-bold"
+                        >
+                            {{ videojuego.get_precio_formateado }}
                         </div>
+
+                        <br>
+
+                        <button
+                            class="btn h-100 w-100 bg-verdeBrillante text-moradoOscuro border-0 rounded-3 fs-5 fw-bold"
+                            data-nombre="{{ videojuego.nombre }}"
+                            data-foto_pq="{{ videojuego.foto_pq.url }}"
+                            data-precio="{{ videojuego.get_precio_formateado }}"
+                            data-slug="{{ videojuego.slug }}"
+                            onclick="agregarAlCarrito(this.dataset.nombre, this.dataset.foto_pq, this.dataset.precio, this.dataset.slug)"
+                        >
+                                Agregar al carrito
+                        </button>
                     </div>
                 </section>
             </div>
         </div>
     </article>
 
+
+    
     {% if videojuegos_estudio %}
-    <article class="container-xl my-5">
-        <div class="row py-3">
-            <div class="col">
-                <section
-                    class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
-                >
-                    <h1 class="fs-4 fw-bold">
-                        Mas de
-                        <a
-                            href=""
-                            class="text-verdeBrillante text-decoration-none"
-                            >{{ videojuego.estudio }}</a
-                        >
-                    </h1>
-                </section>
-            </div>
-        </div>
-        <div
-            class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 py-3"
-            id="grupo-cartas"
+    <article class="container-xl my-5 p-0">
+        <section
+            class="text-white bg-moradoClaro rounded-3 p-3 mb-3 shadow-lg"
         >
-            {% for videojuego in videojuegos_estudio %} {% if forloop.counter <= 6 %}
-                {% include 'cards/videojuego_card.html' with videojuego=videojuego %}
-            {% endif %} {% endfor %}
+            <h2 class="fs-4 fw-bold my-auto">
+                Mas de
+                <span
+                    class="text-verdeBrillante text-decoration-none"
+                    >{{ videojuego.estudio }}</span
+                >
+            </h2>
+        </section>
+        <div class="text-white bg-moradoClaro rounded-3 p-3 shadow-lg">
+            <div
+                class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4"
+                id="grupo-cartas"
+            >
+                {% for videojuego in videojuegos_estudio %} {% if forloop.counter <= 6 %}
+                    {% include 'cards/videojuego_card.html' with videojuego=videojuego %}
+                {% endif %} {% endfor %}
+            </div>
         </div>
     </article>
     {% endif %}

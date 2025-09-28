@@ -1,23 +1,22 @@
 <div class="col">
     <a href="/videojuego/{{ videojuego.slug }}/" class="text-decoration-none">
         <section
-            class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg zoom-card-md border-0"
-        >
-            <img
-                src="{{ videojuego.foto_md.url }}"
-                class="card-img-top rounded-4 shadow-lg"
-                alt="..."
-            />
-            <div class="card-body">
-                <h3 class="card-title fs-5 fw-bold">
-                    {{ videojuego.nombre }}
-                </h3>
+            class="card h-100 text-white bg-moradoOscuro rounded-3 shadow-lg zoom-card-md border-0 d-flex"
+        >   
+            <div class="ratio ratio-16x9">
+                <img
+                    src="{{ videojuego.foto_md.url }}"
+                    class="card-img-top rounded-3 shadow-lg object-fit-cover"
+                    alt="..."
+                />
             </div>
-            <div class="card-footer fw-bold border-0">
-                <small class="text-white fs-6 text-verdeBrillante"
-                    >{{ videojuego.get_precio_formateado }}</small
-                >
-            </div>
+                <div class="fw-bold border-0 w-100 px-0 py-3 mx-auto row">
+                    <h3 class="card-title fs-6 fw-bold col-9 my-auto">{{ videojuego.nombre }}</h3>
+
+                    <small class="text-white fs-6 text-verdeBrillante col-3 d-flex justify-content-end my-auto"
+                        >{{ videojuego.get_precio_formateado }}</small
+                    >
+                </div>
         </section>
     </a>
 </div>

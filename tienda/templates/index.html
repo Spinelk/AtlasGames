@@ -1,34 +1,34 @@
-{% extends 'layouts/app.html' %} {% block contenido %}
+{% extends 'layouts/app.html' %}
+{% block contenido %}
 
 <main class="mt-5">
-    <article class="container-xl my-5">
-        <div class="row py-3">
-            <div class="col">
-                <section
-                    class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
-                >
-                    <h1 class="fs-4 fw-bold">Juega Gratis</h1>
-                </section>
-            </div>
-        </div>
-        <div class="row py-3">
+    <article class="container-xl my-5 p-0">
+        <section
+            class="text-white bg-moradoClaro rounded-3 p-3 mb-3 shadow-lg"
+        >
+            <h2 class="fs-4 fw-bold my-auto">Juega Gratis</h2>
+        </section>
+
+        <div class="row">
             <div id="carouselExample" class="carousel slide w-100">
-                <div class="carousel-inner rounded-4 shadow-lg">
-                    {% for videojuego in videojuegos_gratuitos %} {% if forloop.counter <= 3 %}
-                    {% if forloop.counter <= 1 %}
-                    <div class="carousel-item active">
-                    {% else %}
-                    <div class="carousel-item">
-                    {% endif %}
-                        <a href="/videojuego/{{ videojuego.slug }}/">
-                            <img
-                                src="{{ videojuego.foto_gd.url }}"
-                                class="d-block w-100 ratio ratio-19x9 rounded-4 zoom-card-carrusel"
-                                alt="Banner {{ videojuego.nombre }}"
-                            />
-                        </a>
-                    </div>
-                    {% endif %} {% endfor %}
+                <div class="carousel-inner rounded-3 shadow-lg">
+
+                    {% for videojuego in videojuegos_gratuitos %}
+                        {% if forloop.counter <= 3 %}
+                        <div
+                            class="carousel-item {% if forloop.first %} active{% endif %}"
+                        >
+                            <a href="/videojuego/{{ videojuego.slug }}/">
+                                <img
+                                    src="{{ videojuego.foto_gd.url }}"
+                                    class="d-block w-100 ratio ratio-19x9 rounded-3 zoom-card-carrusel"
+                                    alt="Banner {{ videojuego.nombre }}"
+                                />
+                            </a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                    
                 </div>
                 <button
                     class="carousel-control-prev z-1"
@@ -57,73 +57,76 @@
             </div>
         </div>
     </article>
-    
-    <article class="container-xl my-5">
-        <div class="row py-3">
-            <div class="col">
-                <section
-                    class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
-                >
-                    <h1 class="fs-4 fw-bold">Nuevos Lanzamientos</h1>
-                </section>
-            </div>
-        </div>
-        <div
-            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 py-3"
-            id="grupo-cartas-2"
+
+
+
+    <article class="container-xl my-5 p-0">
+        <section
+            class="text-white bg-moradoClaro rounded-3 p-3 mb-3 shadow-lg"
         >
-            {% for videojuego in videojuegos %} {% if forloop.counter <= 6 %}
-                {% include 'cards/videojuego_card_md.html' with videojuego=videojuego %}
-            {% endif %} {% endfor %}
-        </div>
-    </article>
-
-    <article class="container-xl my-5">
-        <div class="row py-3">
-            <div class="col">
-                <section
-                    class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
-                >
-                    <h1 class="fs-4 fw-bold">Juegos Indie</h1>
-                </section>
-            </div>
-        </div>
-
-        <div class="row py-3">
-            <div class="col">
-                <div class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg">
-                    <div
-                        class="row row-cols-1 row-cols-lg-2 g-4 p-3"
-                        id="grupo-cartas-2"
-                    >
-                    {% for videojuego in videojuegos_indie %} {% if forloop.counter <= 2 %}
-                    {% include 'cards/videojuego_card_sp.html' with videojuego=videojuego %}
-                        {% endif %} {% endfor %}
-                    </div>
-                </div>
+            <h2 class="fs-4 fw-bold my-auto">Nuevos Lanzamientos</h2>
+        </section>
+  
+        <div class="text-white bg-moradoClaro rounded-3 p-3 shadow-lg">
+            <div
+                class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"
+                id="grupo-cartas-2"
+            >
+                {% for videojuego in videojuegos %}
+                    {% if forloop.counter <= 8 %}
+                        {% include 'cards/videojuego_card_md.html' with videojuego=videojuego %}
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </article>
 
-    <article class="container-xl my-5">
-        <div class="row py-3">
-            <div class="col">
-                <section
-                    class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
-                >
-                    <h1 class="fs-4 fw-bold">Todos los Juegos</h1>
-                </section>
-            </div>
-        </div>
-        <div
-            class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 py-3"
-            id="grupo-cartas"
+
+
+    <article class="container-xl my-5 p-0">
+        <section
+            class="text-white bg-moradoClaro rounded-3 p-3 mb-3 shadow-lg"
         >
-            {% for videojuego in videojuegos %}
-                {% include 'cards/videojuego_card.html' with videojuego=videojuego %}
-            {% endfor %}
+            <h2 class="fs-4 fw-bold my-auto">Juegos Indie</h2>
+        </section>
+
+
+        <div class="text-white bg-moradoClaro rounded-3 p-3 shadow-lg">
+            <div
+                class="row row-cols-1 row-cols-lg-2 g-4"
+            >
+                {% for videojuego in videojuegos_indie %}
+                    {% if forloop.counter <= 4 %}
+                        {% include 'cards/videojuego_card_sp.html' with videojuego=videojuego %}
+                    {% endif %}
+                {% endfor %} 
+            </div>
         </div>
     </article>
+
+
+
+    <article class="container-xl my-5 p-0">
+        <section
+            class="text-white bg-moradoClaro rounded-3 p-3 mb-3 shadow-lg"
+        >
+            <h2 class="fs-4 fw-bold my-auto">Todos los Juegos</h2>
+        </section>
+
+        
+        <div class="text-white bg-moradoClaro rounded-3 p-3 shadow-lg">
+            <div
+                class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-3"
+                id="grupo-cartas"
+            >
+                {% for videojuego in videojuegos %}
+                    {% include 'cards/videojuego_card.html' with videojuego=videojuego %}
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+
+
 
     <div
         name="Carro"
@@ -159,7 +162,6 @@
             </button>
         </div>
     </div>
-
 </main>
 
 {% endblock %}

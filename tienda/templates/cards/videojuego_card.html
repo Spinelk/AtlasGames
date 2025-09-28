@@ -4,19 +4,21 @@
         class="text-decoration-none"
     >
         <section
-            class="card h-100 text-white bg-moradoClaro rounded-4 shadow-lg zoom-card border-0"
+            class="card h-100 text-white bg-moradoOscuro rounded-3 shadow-lg zoom-card border-0"
         >
-            <img
-                src="{{ videojuego.foto_pq.url }}"
-                class="card-img-top rounded-4 shadow-lg"
-                alt="..."
-            />
-            <div class="card-body">
-                <h3 class="card-title fs-5 fw-bold">
+            <div style="aspect-ratio: 2 / 3" class="ratio">
+                <img
+                    src="{{ videojuego.foto_pq.url }}"
+                    class="card-img-top rounded-3 shadow-lg object-fit-cover"
+                    alt="..."
+                />
+            </div>
+            
+
+            <div class="p-2 fw-bold border-0 h-100">
+                <h3 class="fs-6 fw-bold">
                     {{ videojuego.nombre }}
                 </h3>
-            </div>
-            <div class="card-footer fw-bold border-0">
                 <small class="text-white fs-6 text-verdeBrillante"
                     >{{ videojuego.get_precio_formateado }}</small
                 >

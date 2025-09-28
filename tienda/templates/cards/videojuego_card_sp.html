@@ -4,15 +4,17 @@
         class="text-decoration-none"
     >
         <section
-            class="card h-100 mb-3 bg-moradoOscuro text-white rounded-4 zoom-card-sp shadow-lg border-0 g-0"
+            class="card h-fit bg-moradoOscuro text-white rounded-43 zoom-card-sp shadow-lg border-0 g-0"
         >
-            <div class="row row-cols-2 rounded-4">
+            <div class="row row-cols-2 rounded-3">
                 <div class="col-md-6">
-                    <img
-                        src="{{ videojuego.foto_pq.url }}"
-                        class="img-fluid rounded-4 h-100"
-                        alt="..."
-                    />
+                    <div class="ratio ratio-16x9">
+                        <img
+                            src="{{ videojuego.foto_md.url }}"
+                            class="card-img-top rounded-3 shadow-lg object-fit-cover"
+                            alt="..."
+                        />
+                    </div>
                 </div>
 
                 <div
@@ -20,7 +22,7 @@
                 >
                     <div class="card-body">
                         <h3
-                            class="card-title fs-2 fw-bold"
+                            class="card-title fs-4 fw-bold"
                         >
                         {{ videojuego.nombre }}
                         </h3>
@@ -33,7 +35,7 @@
                         class="card-footer fw-bold border-0"
                     >
                         <small
-                            class="text-white fs-3 text-verdeBrillante"
+                            class="text-white fs-5 text-verdeBrillante"
                             >{{ videojuego.get_precio_formateado }}</small
                         >
                     </div>

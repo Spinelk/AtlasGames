@@ -1,61 +1,60 @@
 {% extends 'layouts/app.html' %} {% block contenido %}
 
 <main class="mt-5">
-    <article class="container-xl my-5">
-        <div class="row py-3">
-            <div class="col">
-                <section
-                    class="text-white bg-moradoClaro rounded-4 p-3 shadow-lg"
-                >
-                    <form
-                        class=""
-                        method="GET"
-                        action="{% url 'tienda:explorar' %}"
-                    >
-                        <div class="input-group mb-3">
-                            <input
-                                type="text"
-                                name="q"
-                                class="form-control bg-moradoOscuro border-0 text-white"
-                            />
-                            <button
-                                class="btn text-black bg-verdeBrillante"
-                                type="submit"
-                                value="Buscar"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="16"
-                                    height="16"
-                                    fill="currentColor"
-                                    class="bi bi-search"
-                                    viewBox="0 0 16 16"
-                                >
-                                    <path
-                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
-                    <h1 class="fs-4 fw-bold">
-                        Resultados de búsqueda para "<span class="text-verdeBrillante">{{ query }}</span>"
-                    </h1>
-                </section>
-            </div>
-        </div>
-        {% if videojuegos %}
-        <div
-            class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4 py-3"
-            id="grupo-cartas"
+    <article class="container-xl my-5 p-0">
+        <section
+            class="text-white bg-moradoClaro rounded-3 p-3 mb-3 shadow-lg"
         >
-            {% for videojuego in videojuegos %}
-                {% include 'cards/videojuego_card.html' with videojuego=videojuego %}
-            {% endfor %}
+            <form
+                method="GET"
+                action="{% url 'tienda:explorar' %}"
+            >
+                <div class="input-group mb-3">
+                    <input
+                        type="text"
+                        name="q"
+                        class="form-control bg-moradoOscuro border-0 text-white"
+                    />
+                    <button
+                        class="btn text-black bg-verdeBrillante"
+                        type="submit"
+                        value="Buscar"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-search"
+                            viewBox="0 0 16 16"
+                        >
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                            />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+            <h1 class="fs-4 fw-bold my-auto">
+                Resultados de búsqueda para "<span class="text-verdeBrillante">{{ query }}</span>"
+            </h1>
+        </section>
+
+        <div class="text-white bg-moradoClaro rounded-3 p-3 shadow-lg">
+            {% if videojuegos %}
+                <div
+                    class="row row-cols-2 row-cols-sm-3 row-cols-xl-6 g-4"
+                    id="grupo-cartas"
+                >
+                    {% for videojuego in videojuegos %}
+                        {% include 'cards/videojuego_card.html' with videojuego=videojuego %}
+                    {% endfor %}
+                </div>
+            {% else %}
+            <h2 class="fs-4 fw-bold my-auto">No se encontraron resultados.</h2>
+            {% endif %}
         </div>
-        {% else %}
-        <h2 class="fs-4 fw-bold">No se encontraron resultados.</h2>
-        {% endif %}
+
     </article>
 
     <div
