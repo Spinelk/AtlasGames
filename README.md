@@ -36,6 +36,9 @@ pip install -r requerimientos.txt
 
 # Instrucciones de uso 
 
+## Consideración
+Es posible que deba utilizar 'python3' en lugar de 'python' dependiendo del entorno/imagen que se utilice.
+
 ## Migraciones
 ```
 python manage.py makemigrations
